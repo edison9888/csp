@@ -1,0 +1,39 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<servlet>
+		<servlet-class>com.taobao.wwnotify.web.MesgServlet</servlet-class>
+		<servlet-name>mesgServlet</servlet-name>
+		<init-param>
+			<param-name>host</param-name>
+			<param-value>110.75.160.5</param-value>
+		</init-param>
+		<init-param>
+			<param-name>port</param-name>
+			<param-value>33445</param-value>
+		</init-param>
+	</servlet>
+	<servlet>
+		<servlet-class>com.taobao.wwnotify.web.NewServlet</servlet-class>
+		<servlet-name>notifyServlet</servlet-name>
+		<init-param>
+			<param-name>host</param-name>
+			<param-value>110.75.160.5</param-value>
+		</init-param>
+		<init-param>
+			<param-name>port</param-name>
+			<param-value>33445</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>mesgServlet</servlet-name>
+		<url-pattern>/mesg</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>notifyServlet</servlet-name>
+		<url-pattern>/notify.htm</url-pattern>
+	</servlet-mapping>
+</web-app>

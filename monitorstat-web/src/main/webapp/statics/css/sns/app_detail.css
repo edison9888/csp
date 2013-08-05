@@ -1,0 +1,147 @@
+@charset "utf-8";
+@import "common.css";
+
+.groups{
+	margin:10px 0px;
+	width:900px;
+	float:left;
+}
+
+.groups .group {
+	margin-bottom:10px;
+}
+
+.groups .group .group-name {
+	background:url("images/ui-bg_highlight-soft_75_cccccc_1x100.png") repeat-x scroll 50% 50% #CCCCCC;
+	border:1px solid #AAAAAA;
+	color:#222222;
+	font-weight:bold;
+	padding:0.5em 0.3em 0.3em 1em;
+	-moz-border-radius:4px 4px 4px 4px;
+	height: 18px;
+}
+.summary{
+	font-weight: bold;
+	font-size: 14px;
+	margin: 10px 0px 15px;
+	clear:both;
+}
+.graph {
+	clear:both;
+}
+.graph span{
+	font-size: 14px;
+	position:relative;
+	float: left;
+	background:url("images/ui-bg_highlight-soft_75_cccccc_1x100.png") repeat-x scroll 50% 50% #CCCCCC;
+	-moz-border-radius:4px 4px 4px 4px;
+	height: 20px;
+	padding-top:2px;
+	padding-left:5px;
+	margin-bottom: 10px;
+}
+.graph .qps-graph{
+	border:1px solid #AAAAAA;	
+	position: relative;
+	height: 270px;
+	width:600px;
+	padding: 10px 10px 10px 10px;
+	-moz-border-radius:4px 4px 4px 4px;
+}
+
+.graph .qps-graph span{
+	width: 592px;
+}
+.graph .load-graph{
+	border:1px solid #AAAAAA;	
+	position: relative;
+	height: 280px;
+	width:580px;
+	padding: 10px 10px 10px 10px;
+	-moz-border-radius:4px 4px 4px 4px;
+}
+.graph .load-graph span{
+	width: 572px;
+}
+.hsf {
+
+}
+
+.hsf .hsf-interface {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size:20px;
+	font-weight:bold;
+	background:url("images/ui-bg_highlight-soft_75_cccccc_1x100.png") repeat-x scroll 50% 50% #CCCCCC;
+	-moz-border-radius:4px 4px 4px 4px;
+}
+
+.hsf .hsf-method-table {
+	width:100%;
+	margin-bottom:10px;
+	border-collapse: collapse;
+	font-size: 12px;
+	line-height: 25px;
+}
+
+.hsf .hsf-method-table td{
+	border:1px solid #C8C8C8;
+	padding-left: 4px;
+}
+.hsf .hsf-method-table th{border:1px solid #ccc;}
+.qps-table-wrapper{
+	display:inline;
+	float:left;
+	margin:5px 20px 5px 0px;
+}
+.group a{
+	text-decoration:none;
+}
+.load-table-wrapper{
+	display:inline;
+	float:right;
+	margin:5px 0px 5px 0px;
+}
+
+.qps-table-wrapper .qps-table{
+	border-color:#C8C8C8 #C8C8C8 -moz-use-text-color;
+	border-style:solid solid none;
+	border-width:1px 1px 0;
+	line-height:28px;
+	margin-top:5px;
+	width:480px;
+	font-size: 12px;
+}
+table{
+	border-collapse:collapse;
+	border-spacing:0;
+}
+.qps-table-wrapper .qps-table td{
+	border:1px solid #C8C8C8;
+	height:28px;
+	padding-left:4px;
+}
+.qps-table-wrapper .qps-table th{
+	background:url("http://img07.taobaocdn.com/tps/i7/T1a2XuXc4xXXXXXXXX-1-28.png") repeat-x scroll 0 0 transparent;
+}
+.qps-table-wrapper .qps-table td img {cursor:pointer;}
+
+.load-table-wrapper .load-table{
+	border-color:#C8C8C8 #C8C8C8 -moz-use-text-color;
+	border-style:solid solid none;
+	border-width:1px 1px 0;
+	line-height:28px;
+	margin-top:5px;
+	width:400px;
+	font-size: 12px;
+}
+
+.load-table-wrapper .load-table td{
+	border:1px solid #C8C8C8;
+	height:28px;
+	padding-left:4px;
+}
+.load-table-wrapper .load-table th{
+	background:url("http://img07.taobaocdn.com/tps/i7/T1a2XuXc4xXXXXXXXX-1-28.png") repeat-x scroll 0 0 transparent;
+}
+.load-table-wrapper .load-table td img {cursor:pointer;}

@@ -1,0 +1,58 @@
+
+A:visited{TEXT-DECORATION:none;COLOR:#2A8C8D} 
+A:link{text-decoration:none;COLOR:#2A8C8D} 
+A:hover{TEXT-DECORATION:COLOR:#2A8C8D;FONT-WEIGHT:bold;FONT-STYLE:italic} 
+A.1:link{text-decoration:none;COLOR:#2A8C8D} 
+A.1:visited{TEXT-DECORATION:none;COLOR:#2A8C8D} 
+A.1:hover{TEXT-DECORATION:none;COLOR:#2A8C8D;FONT-WEIGHT:bold;FONT-STYLE:italic} 
+
+
+.table1{border:red 1.8px solid;}  
+
+.table_td1{font-size:20px;font-weight:bold;color:red;border-bottom:red 2px solid; line-height:25px;} 
+
+.table_td{border-bottom:#8c8c8c 1px dotted;line-height:25px;} 
+
+.table2{border:red 1px solid;}  
+
+.table2_tr{background-color:#FFCC99;font-size:18px;font-weight:bold;color:black;border-bottom:green 2px solid; } 
+
+.table2  td{line-height:25px;} 
+
+.table2_td{border-bottom:#8c8c8c 1px dotted;line-height:20px;font-size:small;} 
+
+.container {width:810px; padding:0; margin:0 auto; height:100%;}
+
+.leftDiv { width:300px; float:left;text-align:left;line-height:28px;display:block;}
+
+.rightDiv { width:510px; float:right; text-align:center; line-height:23px;display:block;}
+
+
+.f_box{width:810px;text-align:center;padding:0px;margin:0 0px;float:left;border-bottom:#e1e1e1 1px dashed;margin-top:3px;background:url(../img/tt_bj.gif) repeat-x top;text-indent:20px;display:inline;}
+.f_box_ul {padding:0px;margin:0 36px;list-style-type:none;display:block;}
+.f_box_li {width:360px;float:left;list-style-type:none;text-indent:10px;line-height:25px;color:#c4722c;
+              white-space:nowrap;text-overflow:ellipsis;overflow:hidden;text-align:left;cursor:pointer;font-size:small;}
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+
+#main{
+	padding:0;
+	font-size:12px;
+	line-height:14px;
+	font-family:Verdana;
+	background-color:#fff;
+	width: 1000px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+#banner {
+	background-position: center;
+	width: 1000px;
+}
+#selectform {
+	width: 700px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+#selectform2 {
+	width: 500px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+
+#content {
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+#name {
+	font-size: 10px;
+	color: #FF0000;
+	margin-right: auto;
+	margin-left: auto;
+	background-position: center;
+}

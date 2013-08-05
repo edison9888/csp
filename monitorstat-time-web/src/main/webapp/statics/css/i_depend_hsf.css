@@ -1,0 +1,56 @@
+#window_1 {
+	left: 0px;
+	top: 140px;
+}
+
+#window_2 {
+	left: 0px;
+	top: 320px;
+}
+
+#window_3 {
+	left: 195px;
+	top: 0px;
+}
+
+#window_4 {
+	left: 435px;
+	top: 0px;
+}
+
+#window_5 {
+	left: 675px;
+	top: 0px;
+}
+
+#window_6 {
+	left: 195px;
+	top: 460px;
+}
+
+#window_7 {
+	left: 435px;
+	top: 460px;
+}
+
+#window_8 {
+	left: 675px;
+	top: 460px;
+}
+
+#window_9 {
+	/*1024-150 = 874*/
+		left: 874px;
+	top: 140px;
+}
+
+#window_10 {
+	left: 874px;
+	top: 320px;
+}
+
+#window_center {
+	left: 400px;
+	top: 230px;
+}
+	

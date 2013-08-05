@@ -1,0 +1,90 @@
+<PUBLIC:COMPONENT lightWeight=false>
+<PUBLIC:DEFAULTS contentEditable=false tabStop=false/>
+
+<PUBLIC:attach event="ondocumentready" onevent="initElement()" />
+
+<script language="JScript">
+function trim(sValue){
+  return sValue.replace( /(^\s*)|(\s*$)/g, "" );
+}
+
+function initElement(){
+    alarmText(element);
+}
+
+function alarmText(el){
+    var grade=el.innerText;
+    var className;
+    var outText;
+    var name;
+    var tipText;
+    grade=trim(grade);
+    var pos=grade.indexOf("##");
+    if(pos== -1){
+        if(grade=="3"){
+            tipText = "高级警示";
+            className="gradeRed";
+            outText="高";
+        }else if(grade=="2"){
+            tipText = "中级警示";
+            className="gradeOrange";
+            outText="中";
+        }else if(grade=="1"){
+            tipText = "低级警示";
+            className="gradeYellow";
+            outText="低";
+        }else{
+            tipText = "";
+            className="gradeBlack";
+            outText="&nbsp;&nbsp;";
+        }
+        el.className = className;
+        el.align="center";
+        el.title=tipText;
+        el.innerHTML = outText+"&nbsp;";
+        return;
+    }else{
+        name = trim(grade.substr(pos+2));
+        grade = trim(grade.substr(0,pos));
+        if(el.className=="alarmwidthCN"){
+            if(grade=="3"){
+                tipText = "高级警示";
+                outText="<table width='100%' cellspacing='0' cellpadding='0'><tr><td valign='middle' align='left' width='15%' class='gradeRed'>高</td><td valign='middle' align='right' width='85%' class='gradeRed'>"+name+"&nbsp;"+"</td></tr></table>";
+            }else if(grade=="2"){
+                tipText = "中级警示";
+                outText="<table width='100%' cellspacing='0' cellpadding='0'><tr><td valign='middle' align='left' width='15%' class='gradeOrange'>中</td><td valign='middle' align='right' width='85%' class='gradeOrange'>"+name+"&nbsp;"+"</td></tr></table>";
+            }else if(grade=="1"){
+                tipText = "低级警示";
+                outText="<table width='100%' cellspacing='0' cellpadding='0'><tr><td valign='middle' align='left' width='15%' class='gradeYellow'>低</td><td valign='middle' align='right' width='85%' class='gradeYellow'>"+name+"&nbsp;"+"</td></tr></table>";
+            }else{
+                tipText = "";
+                outText="<table width='100%' cellspacing='0' cellpadding='0'><tr><td valign='middle' align='left' width='15%' class='gradeBlack'>&nbsp;&nbsp;</td><td valign='middle' align='right' width='85%' class='gradeBlack'>"+name+"&nbsp;"+"</td></tr></table>";
+            }
+            el.title=tipText;
+            el.innerHTML = outText;
+            return;
+         }else{
+            outText=name;
+            if(grade=="3"){
+                tipText = "高级警示";
+                className="gradeRed";
+            }else if(grade=="2"){
+                 tipText = "中级警示"
+                className="gradeOrange";
+            }else if(grade=="1"){
+                tipText = "低级警示";
+                className="gradeYellow";
+            }else{
+                tipText = "";
+                className="gradeBlack";
+            }
+            el.title=tipText;
+            el.className = className;
+            el.innerHTML = outText+"&nbsp;";
+            return;
+        }
+    }
+}
+</script>
+</PUBLIC:COMPONENT>
+

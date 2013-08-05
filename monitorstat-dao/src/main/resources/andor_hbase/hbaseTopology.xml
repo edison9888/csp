@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<machine-tapologic>
+	<group name="csp_hbase_group" type="HBASE_CLIENT">
+		<!-- <atom name="csp_hbase_group_atom0"
+			ip="db031215.sqa.cm4.tbsite.net,db031216.sqa.cm4.tbsite.net,db031219.sqa.cm4.tbsite.net"
+			port="3325" status="W10R10" user-name="should not be here" password="should not be here"
+			channelTimeout="2000000" />-->
+		<atom name="csp_hbase_group_atom0"
+			ip="v064064.sqa.cm4.tbsite.net,dev031064.sqa.cm4.tbsite.net,db038183.sqa.cm4.tbsite.net"
+			port="3325" status="W10R10" user-name="should not be here" password="should not be here"
+			channelTimeout="2000000" />
+	</group>
+</machine-tapologic>

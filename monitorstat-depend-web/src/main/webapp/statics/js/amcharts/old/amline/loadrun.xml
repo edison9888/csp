@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings> 
+  <font>Tahoma</font> 
+  <hide_bullets_count>18</hide_bullets_count>     
+   
+   <background>
+    <border_color>#000000</border_color>
+    <border_alpha>10</border_alpha>
+   </background>
+     
+  <plot_area>   
+    <margins>   
+      <left>50</left> 
+      <top>60</top>   
+      <right>40</right>  
+      <bottom>65</bottom> 
+    </margins>
+
+  </plot_area>
+  
+  <grid>       
+    <x>                                                             
+      <alpha>10</alpha> 
+      <approx_count>9</approx_count> 
+    </x>
+    <y_left>      
+      <alpha>10</alpha>   
+    </y_left>
+  </grid>
+
+  
+  <axes>                              
+    <x>                               
+      <color>#0D8ECF</color>          
+      <width>1</width>   
+    </x>
+    <y_left>   
+      <color>#0D8ECF</color>  
+      <width>1</width>  
+    </y_left>
+  </axes>  
+  
+  <indicator>           
+    <color>#0D8ECF</color>
+
+    <line_alpha>50</line_alpha>
+    <selection_color>#0D8ECF</selection_color>
+    <selection_alpha>20</selection_alpha>     
+    <x_balloon_text_color>#FFFFFF</x_balloon_text_color>
+  </indicator>
+    
+  <legend>
+    <text_color_hover>#FF0000</text_color_hover>    
+  </legend>  
+  
+  <zoom_out_button>
+    <text_color_hover>#FF0F00</text_color_hover>      
+  </zoom_out_button> 
+   
+  <labels>               
+    <label>
+      <x>0</x>  
+      <y>25</y> 
+      <align>center</align>     
+      <text_size>13</text_size>              
+      <text>                                 
+        <![CDATA[<b>线上容量预测</b>]]>
+
+      </text>        
+    </label>  
+  </labels>
+  
+  
+  <graphs>     
+    <graph gid="1">  
+      <color>#00FF00</color>  
+      <color_hover>#00FF00</color_hover>
+      <line_width>2</line_width>
+		<fill_alpha>30</fill_alpha>
+		<bullet>round</bullet>
+      <selected>true</selected>   
+    </graph>
+    <graph gid="2">  
+      <color>#157A0A</color>  
+      <color_hover>#157A0A</color_hover>
+      <selected>true</selected>   
+    </graph>
+    <graph gid="3">  
+      <color>#0000FF</color>  
+      <color_hover>#0000FF</color_hover>
+      <selected>true</selected>   
+    </graph>
+    <graph gid="4">  
+      <color>#FF0000</color>  
+      <color_hover>#FF0000</color_hover>
+      <selected>true</selected>   
+    </graph>
+     
+  </graphs>  
+
+</settings>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<logFiles>
+	<logFile logName="gc.log" userAnalyse="gcLogFileAnalyse" >
+		<include>
+			<record>GC</record>
+			<record>Full</record>
+		</include>
+	</logFile>
+	<logFile logName="mbean.log" userAnalyse="mbeanLogFileAnalyse" />
+	<logFile logName="monitor.log" userAnalyse="monitorAnalyse" />	
+	
+</logFiles>
+
+
+<analyse>
+
+<!-- 
+appName :应用的名称
+
+logName ：日志的名称 在匹配日志的时候 采用 indexOf(logName)>-1
+
+fieldList :输出的格式 ，采用name:type 方式，用于统计的name 必须用数字类型
+                            这个顺序必须要输出的顺序一致
+                            
+sum_name: 这个是表示用于累加 ，sum后面的名称可以自定义，用于   indb 入库使用
+                          内容 为key：value 格式。 如果需要使用到field 中的名称 请用 ${filedName}来表示  :后面 表示需要和field某个字段，这个字段必须是数字                       
+                          这个内部分为两步  对所有汇总 进入ms_monitor_count 和每分钟汇总 进入ms_monitor_data
+                          
+average_name: 这个用于取平均，average后面的名称可以自定义，用于   indb 入库使用
+                           内容取对应的sum 的名称 ，在做平均的时候 分为两部分，一个是对所有汇总数据的平均 进入ms_monitor_count 表示，一个是每分钟的平均进入ms_monitor_data
+                           
+averageMachine_name：这个会对数据平均到每台机器(有多少个log日志就有多少台) averageMachine后面的名称可以自定义，用于   indb 入库使用
+                          内容取对应的sum 的名称 平均每台机器一个是对所有汇总数据的平均 进入ms_monitor_count 表示，一个是每分钟的平均进入ms_monitor_data
+                          
+averageRecord_name:这个会对数据平均到每条记录 averageRecord后面的名称可以自定义，用于   indb 入库使用
+                          内容取对应的sum 的名称 平均每台机器一个是对所有汇总数据的平均 进入ms_monitor_count 表示，一个是每分钟的平均进入ms_monitor_data
+
+includeFileName:这个表示在入库 ，对filed name 一个配置，采用indexOf(includeFileName) >-1 方式只有匹配上才入库
+                fieldName:name1,name2;fieldName:name1,name2;   采用这种格式,includeFileName为了防止入库过多includeFileName 必须要写
+   
+MachineNumber 和RecordNumber 这个是内置的两个数据
+MachineNumber：表示机器数量                                         
+RecordNumber：表示记录数量
+                          
+fetch 处理数据类
+      class ：必须实现 接口FetchData，如果是文件类型的 还必须继承 AbstractFileReader
+      recordSeparator ：每行分割符
+      fieldSeparator：一行中分割符
+      collectTimePattern：时间获取的正则表达式
+      collectTimeFormat：转换成时间的 SimpleDateFormat 格式
+      
+      
+      如果没有什么特殊要求可以直接 MonitorLogFileReader 已经实现了按照规则的分割类
+      如果日志文件需要特殊处理，可以模仿GcLogFileReader ，
+  
+       如果是直接读取 数据库 或其它非日志文件，只需要直接实现 FetchData接口，
+       将数据按照配置格式输出就可以
+       
+ -->
+<logFile id="gcLogFileAnalyse" 		
+        appName="list" logName="gc.log" 
+		fieldList="gcName:String,gcNum:Long,gcUseTime:Double" 
+		sum_name1="${gcName}:gcNum" 
+		sum_name2="${gcName}:gcUseTime" 
+		average_name3="name1/name2"  
+		averageMachine_name4="name1"
+		indb="name1,name3,name4"
+		includeFileName="gcName:GC,Full;"
+>
+<fetch class="com.taobao.monitor.stat.newanalyse.impl.GcLogFileReader" 
+    recordSeparator="\02" 
+	fieldSeparator="\01" 
+	collectTimePattern="(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}):\\d{2}" 
+	collectTimeFormat="yyyy-MM-dd'T'HH:mm"/>
+</logFile>
+
+<logFile id="mbeanLogFileAnalyse" 
+        appName="list" logName="mbean.log" 
+		fieldList="MbeanName:String,MbeanNum:Long" 
+		sum_name1="${MbeanName}:MbeanNum" 		 
+		averageRecord_name4="name1/RecordNumber"
+		includeFileName="MbeanName:ajp,HSFBizProcessor"
+		indb="name4"		
+>
+<fetch class="com.taobao.monitor.stat.newanalyse.impl.MbeanLogFileReader" 
+    recordSeparator="\02" 
+	fieldSeparator="\01" 
+	collectTimePattern="(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}):\\d{2}" 
+	collectTimeFormat="yyyy-MM-dd HH:mm"/>
+</logFile>
+
+<!-- 
+StatisticsService.queryTotalSale^A查询销售数量^Alevel-3^A3^A101^A2010-05-10 00:00:46^Av014059.cm3.tbsite.net^B 
+HSF-Consumer^Acom.taobao.designcenter.core.client.UserPageReadService:1.0.0^AgetReleaseRichPageById^Acom.alibaba.turbine.module.TemplateModule@execute@38^A15^A196^A2010-05-11 00:00:28^Av015153.cm3.tbsite.net^B
+-->
+<logFile id="monitorAnalyse"       
+		fieldList="hsfType,className,methodName,templateName,excuteNumber:Long,useTime:Long,collectTime,hostName" 
+		sum_name1="OUT_${hsfType}_${className}_${methodName}:excuteNumber" 
+		sum_name2="OUT_${hsfType}_${className}_${methodName}:useTime" 
+		average_name3="name1/name2"
+		indb="name1,name3"
+		includeFileName="hsfType:HSF;"
+>
+<fetch class="com.taobao.monitor.stat.newanalyse.impl.MonitorLogFileReader" 
+    recordSeparator="\02" 
+	fieldSeparator="\01" 
+	collectTimePattern="(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}):\\d{2}" 
+	collectTimeFormat="yyyy-MM-dd HH:mm"/>
+</logFile>
+
+</analyse>
+</root>

@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+div {
+	font-size: 12px;
+}
+table {
+	margin: 1em 0;
+	border-collapse: collapse;
+	width: 100%;
+	font-size: 12px;
+	margin: 0px 0;
+}
+
+table td {
+font-size: 12px;
+}
+.report_on{background:#bce774;}

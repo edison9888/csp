@@ -1,0 +1,89 @@
+@CHARSET "UTF-8";
+@import "common.css";
+
+.app {
+	margin-bottom:10px;
+	width:800px;
+	position:relative; 
+}
+
+.app .app-name {
+	background-color:orange;
+	margin-bottom:5px;
+	height:25px;
+	font-size:20px;
+}
+
+.app .app-name a {
+	text-decoration:none;
+	color:#2D2D2D;
+}
+table a{
+	text-decoration:none;
+}
+.srv-type {
+	background:url("images/ui-bg_highlight-soft_75_cccccc_1x100.png") repeat-x scroll 50% 50% #CCCCCC;
+	border:1px solid #AAAAAA;
+	color:#222222;
+	font-weight:bold;
+	padding:0.5em 0.3em 0.3em 1em;
+	-moz-border-radius:4px 4px 4px 4px;
+}
+.qps-table-wrapper{
+	display:inline;
+	float:left;
+	margin:20px 20px 0px 0px;
+	clear:right;
+}
+
+.load-table-wrapper{
+	display:inline;
+	margin-top:20px;
+	float:left;
+	width: 500px;
+}
+
+.qps-table-wrapper .qps-table{
+	border-color:#C8C8C8 #C8C8C8 -moz-use-text-color;
+	border-style:solid solid none;
+	border-width:1px 1px 0;
+	line-height:28px;
+	margin-top:10px;
+	width:500px;
+	font-size: 14px;
+}
+table{
+	border-collapse:collapse;
+	border-spacing:0;
+}
+.qps-table-wrapper .qps-table td{
+	border:1px solid #C8C8C8;
+	height:28px;	
+	padding-left:4px;
+}
+.qps-table-wrapper .qps-table th{
+	border:0px;
+	background:url("http://img07.taobaocdn.com/tps/i7/T1a2XuXc4xXXXXXXXX-1-28.png") repeat-x scroll 0 0 transparent;
+}
+.qps-table-wrapper .qps-table td img {cursor:pointer;}
+
+.load-table-wrapper .load-table{
+	border-color:#C8C8C8 #C8C8C8 -moz-use-text-color;
+	border-style:solid solid none;
+	border-width:1px 1px 0;
+	line-height:28px;
+	margin-top:10px;
+	width:500px;
+	font-size: 14px;
+}
+
+.load-table-wrapper .load-table td{
+	border:1px solid #C8C8C8;
+	height:28px;
+	padding-left:4px;
+}
+.load-table-wrapper .load-table th{
+	border:0px;
+	background:url("http://img07.taobaocdn.com/tps/i7/T1a2XuXc4xXXXXXXXX-1-28.png") repeat-x scroll 0 0 transparent;
+}
+.load-table-wrapper .load-table td img {cursor:pointer;}

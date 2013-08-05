@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+ 
+  <bean id="capacityDao" class="com.taobao.csp.capacity.dao.CapacityDao"></bean>
+  
+  <bean id="capacityPvDao" class="com.taobao.csp.capacity.dao.CapacityPvDao"></bean>
+  
+  <bean id="capacityRankingDao" class="com.taobao.csp.capacity.dao.CapacityRankingDao"></bean>
+  <bean id="capacityModelDao" class="com.taobao.csp.capacity.dao.CapacityModelDao"></bean>
+  <bean id="appInfoDao" class="com.taobao.monitor.common.db.impl.center.AppInfoDao"></bean>
+  <bean id="cspDayDao" class="com.taobao.csp.capacity.dao.CspDayDao"></bean>
+  <bean id="cspLoadRunDao" class="com.taobao.csp.capacity.dao.CspLoadRunDao"></bean>
+  <bean id="userInfoDao" class="com.taobao.monitor.common.db.impl.center.UserInfoDao"></bean>
+  <bean id="dependencyCapacityDao" class="com.taobao.csp.capacity.dao.DependencyCapacityDao"></bean>
+  <bean id="dependencyDao" class="com.taobao.csp.capacity.dao.CspDependencyDao"></bean>
+  <bean id="capacityCostDao" class="com.taobao.csp.capacity.dao.CapacityCostDao"></bean>
+  <bean id="capacityCapDao" class="com.taobao.monitor.common.db.impl.capacity.CapacityCapDao"></bean>
+  <bean id="capacityLoadDao" class="com.taobao.monitor.common.db.impl.capacity.CapacityLoadDao"></bean>
+  <bean id="springUtil" class="com.taobao.csp.capacity.util.SpringUtil" />
+  <bean id="userPermissionCheck" class="com.taobao.arkclient.csp.UserPermissionCheck">
+  	<property name="userInfoDao">
+ 		<ref bean="userInfoDao"/>
+   	</property>
+  </bean>
+   
+   <bean id="capacityRankingBo" class="com.taobao.csp.capacity.bo.CapacityRankingBo" >
+    	<property name="capacityRankingDao">
+ 			<ref bean="capacityRankingDao"/>
+ 		</property>
+ 		<property name="capacityDao">
+ 			<ref bean="capacityDao"/>
+ 		</property>
+ 		<property name="appInfoDao">
+ 			<ref bean="appInfoDao"/>
+ 		</property>
+ 		<property name="cspLoadRunDao">
+ 			<ref bean="cspLoadRunDao"/>
+ 		</property>
+ 		<property name="cspDayDao">
+ 			<ref bean="cspDayDao"/>
+ 		</property>
+ 		<property name="constants">
+ 			<ref bean="constants"/>
+ 		</property>
+ 		<property name="capacityPvDao">
+ 			<ref bean="capacityPvDao"/>
+ 		</property>
+ 		<property name="capacityCapDao">
+ 			<ref bean="capacityCapDao"/>
+ 		</property>
+ 		<property name="capacityLoadDao">
+ 			<ref bean="capacityLoadDao"/>
+ 		</property>
+    </bean> 
+   
+    <bean id="dependencyCapacityBo" class="com.taobao.csp.capacity.bo.DependencyCapacityBo" >
+    	<property name="dependencyCapacityDao">
+ 			<ref bean="dependencyCapacityDao"/>
+ 		</property>
+ 		<property name="cspDependencyDao">
+ 			<ref bean="dependencyDao"/>
+ 		</property>
+ 		<property name="capacityDao">
+ 			<ref bean="capacityDao"/>
+ 		</property>
+ 		<property name="appInfoDao">
+ 			<ref bean="appInfoDao"/>
+ 		</property>
+ 		<property name="capacityCostDao">
+ 			<ref bean="capacityCostDao"/>
+ 		</property>
+ 		<property name="capacityRankingDao">
+ 			<ref bean="capacityRankingDao"/>
+ 		</property>
+    </bean> 
+    
+    <bean id="dataInterfaceBo" class="com.taobao.csp.capacity.bo.DataInterfaceBo" >
+    	<property name="cspDependencyDao">
+ 			<ref bean="dependencyDao"/>
+ 		</property>
+ 		<property name="capacityCostDao">
+ 			<ref bean="capacityCostDao"/>
+ 		</property>
+    </bean>
+    
+    <bean id="capacityCostBo" class="com.taobao.csp.capacity.bo.CapacityCostBo" >
+    	<property name="capacityCostDao">
+ 			<ref bean="capacityCostDao"/>
+ 		</property>
+    </bean>
+    
+    <bean id="capacityModelBo" class="com.taobao.csp.capacity.bo.CapacityModelBo" >
+    	<property name="capacityModelDao">
+ 			<ref bean="capacityModelDao"/>
+ 		</property>
+    </bean>
+   
+   
+    <!-- Quartz本地Schduler -->  
+    <bean id="localQuartzScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false">  
+        <!-- Triggers集成 -->  
+        <property name="triggers">  
+            <list>  
+                <ref bean="rankingTrigger" /> 
+                <ref bean="synchTrigger" />   
+            </list>  
+        </property>  
+        <!-- Quartz配置 -->  
+        <property name="quartzProperties">  
+            <props>  
+                <prop key="org.quartz.threadPool.threadCount">5</prop>  
+            </props>  
+        </property>  
+        <!-- 启动时延期3秒开始任务 -->  
+        <property name="startupDelay" value="15" />  
+    </bean>  
+  
+    <!-- Cron式Trigger定义 -->  
+    <bean id="rankingTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+        <property name="jobDetail" ref="rankingDetail" />  
+        <property name="cronExpression" value="0 0 8 * * ?" />
+    </bean>
+    <bean id="synchTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+        <property name="jobDetail" ref="synchDetail" />  
+        <property name="cronExpression" value="0 0 7 * * ?" />  
+    </bean>   
+  
+    <!-- Cron reportSenderDetail, 基于MethodInvokingJobDetailFactoryBean调用普通Spring Bean -->  
+    <bean id="rankingDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+        <property name="targetObject" ref="capacityRankingBo" />  
+        <property name="targetMethod" value="executeRanking" />  
+        <!-- 同一任务在前一次执行未完成而Trigger时间又到时是否并发开始新的执行, 默认为true. -->  
+        <property name="concurrent" value="false" />  
+    </bean>  
+    <bean id="synchDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+        <property name="targetObject" ref="capacityRankingBo" />  
+        <property name="targetMethod" value="synchDataIntoCapacity" />  
+        <!-- 同一任务在前一次执行未完成而Trigger时间又到时是否并发开始新的执行, 默认为true. -->  
+        <property name="concurrent" value="false" />  
+    </bean>  
+   
+     
+   
+   
+   
+<bean id="constants" class="com.taobao.csp.capacity.constant.Constants">
+   <property name="safetyRate">
+   		<value>2.0</value>
+   </property>
+   	<property name="machinePvKey">
+   		<map>
+   			<entry key="CM3" value="50832"/><!-- PV_VISIT_CM3_COUNTTIMES -->
+   			<entry key="CM4" value="50831"/>
+   			<entry key="CM6" value="50842"/>
+   			<entry key="CM8" value="59819"/>
+   		</map>
+   	</property>
+   	<property name="machineQpsKey">
+   		<map>
+   			<entry key="CM3" value="124166"/><!-- PV_QPS_CM3_AVERAGEUSERTIMES -->
+   			<entry key="CM4" value="124165"/>
+   			<entry key="CM6" value="124310"/>
+   			<entry key="CM8" value="124309"/>
+   		</map>
+   	</property>   	
+   	<property name="machineHsfPvKey">
+   		<map>
+   			<entry key="CM3" value="124222"/><!-- IN_HSF_AllInterfacePV_CM3_COUNTTIMES -->
+   			<entry key="CM4" value="124250"/><!-- IN_HSF_AllInterfacePV_CM4_COUNTTIMES --> 
+   			<entry key="CM6" value="130039"/><!-- IN_HSF_AllInterfacePV_CM4_COUNTTIMES -->   	  			
+   		</map>
+   	</property>
+   	<property name="machineHsfQpsKey">
+   		<map>
+   			<entry key="CM3" value="124223"/><!-- IN_HSF_AllInterfaceQps_CM3_AVERAGEUSERTIMES -->
+   			<entry key="CM4" value="124251"/><!-- IN_HSF_AllInterfaceQps_CM4_AVERAGEUSERTIMES -->
+   			<entry key="CM6" value="130040"/><!-- IN_HSF_AllInterfaceQps_CM4_AVERAGEUSERTIMES -->
+   		</map>
+   	</property>
+   	
+   	<property name="machineGroupHSFPvKey">
+   		<map>
+   			<entry key="ALL_PV_G1" value="130185"/><!--IN_HSF_AllInterfacePV_G1_COUNTTIMES-->
+   			<entry key="ALL_PV_G2" value="130182"/>
+   			<entry key="ALL_PV_G3" value="130179"/>
+   			<entry key="ALL_PV_G4" value="130176"/>   		
+   		
+   			<entry key="G1_CM3" value="130187"/><!-- IN_HSF_AllInterfacePV_G4_CM4_COUNTTIMES -->
+   			<entry key="G1_CM4" value="130186"/>
+   			<entry key="G2_CM3" value="130184"/>
+   			<entry key="G2_CM4" value="130183"/>
+   			<entry key="G3_CM3" value="130181"/>
+   			<entry key="G3_CM4" value="130180"/>
+   			<entry key="G4_CM3" value="130178"/>
+   			<entry key="G4_CM4" value="130177"/>
+   		</map>
+   	</property>
+   	<property name="machineGroupHsfQpsKey">
+   		<map>
+   			<entry key="ALL_QPS_G1" value="130200"/><!-- IN_HSF_AllInterfaceQpsALL_G1_AVERAGEUSERTIMES -->
+   			<entry key="ALL_QPS_G2" value="130196"/>
+   			<entry key="ALL_QPS_G3" value="130192"/>
+   			<entry key="ALL_QPS_G4" value="130188"/>
+   			
+   			<entry key="QPS_G1" value="130201"/><!-- IN_HSF_AllInterfaceQps_G1_AVERAGEUSERTIMES -->
+   			<entry key="QPS_G2" value="130197"/>
+   			<entry key="QPS_G3" value="130193"/>
+   			<entry key="QPS_G4" value="130189"/>
+   			
+   			<entry key="G1_CM3" value="130203"/><!-- IN_HSF_AllInterfaceQps_G1_CM3_AVERAGEUSERTIMES -->
+   			<entry key="G1_CM4" value="130202"/>
+   			<entry key="G2_CM3" value="130199"/>
+   			<entry key="G2_CM4" value="130198"/>
+   			<entry key="G3_CM3" value="130195"/>
+   			<entry key="G3_CM4" value="130194"/>
+   			<entry key="G4_CM3" value="130191"/>
+   			<entry key="G4_CM4" value="130190"/>
+   		</map>
+   	</property>
+   	
+   	<property name="hostSiteKey">
+   		<map>
+   			<entry key="CM3" value="992"/><!-- HOSTS_cm3 -->
+   			<entry key="CM4" value="993"/>
+   			<entry key="CM5" value="14420"/>
+   			<entry key="CM6" value="42331"/>
+   			<entry key="CM8" value="54275"/>
+   			<entry key="CN3" value="42426"/>
+   			<entry key="CNB" value="42429"/>
+   			<entry key="CNZ" value="34628"/>
+   			<entry key="CO2" value="42428"/>
+   			<entry key="CORP-CNB" value="42427"/>   						
+   		</map>
+   	</property>
+   	
+   	<property name="groupHostSiteKey">
+   		<map>   			
+   			<entry key="Group_G1_Host_CM3" value="130204"/>
+   			<entry key="Group_G1_Host_CM4" value="130208"/>
+   			<entry key="Group_G2_Host_CM3" value="130205"/>
+   			<entry key="Group_G2_Host_CM4" value="130209"/>
+   			<entry key="Group_G3_Host_CM3" value="130206"/>
+   			<entry key="Group_G3_Host_CM4" value="130210"/>
+   			<entry key="Group_G4_Host_CM3" value="130207"/>
+   			<entry key="Group_G4_Host_CM4" value="130211"/>   			
+   		</map>
+   	</property>
+   	
+   	<property name="largestPvQps">
+   		<map>
+   			<entry key="QPS" value="162579"/>
+   			<entry key="TIME" value="162580"/>
+   			<entry key="HOST" value="166308"/>
+   		</map>
+   	</property>
+   	
+   	<property name="largestHsfQps">
+   		<map>
+   			<entry key="QPS" value="166684"/>
+   			<entry key="TIME" value="166685"/>
+   			<entry key="HOST" value="166683"/>
+   		</map>
+   	</property>
+   	
+   	<property name="largestHsfGroupQps">
+   		<map>
+   			<entry key="QPS_G1" value="166702"/>
+   			<entry key="QPS_G2" value="166699"/>
+   			<entry key="QPS_G3" value="166690"/>
+   			<entry key="QPS_G4" value="166687"/>
+   			<entry key="QPS_G5" value="166696"/>
+   			<entry key="QPS_G6" value="166693"/>
+   		</map>
+   	</property>
+   	
+   	<property name="largestHsfGroupHost">
+   		<map>
+   			<entry key="HOST_G1" value="166701"/>
+   			<entry key="HOST_G2" value="166698"/>
+   			<entry key="HOST_G3" value="166689"/>
+   			<entry key="HOST_G4" value="166686"/>
+   			<entry key="HOST_G5" value="166695"/>
+   			<entry key="HOST_G6" value="166692"/>
+   		</map>
+   	</property>
+   	
+   	<property name="largestHsfGroupTime">
+   		<map>
+   			<entry key="TIME_G1" value="166703"/>
+   			<entry key="TIME_G2" value="166700"/>
+   			<entry key="TIME_G3" value="166691"/>
+   			<entry key="TIME_G4" value="166688"/>
+   			<entry key="TIME_G5" value="166697"/>
+   			<entry key="TIME_G6" value="166694"/>
+   		</map>
+   	</property>
+   	
+</bean>
+   
+
+</beans>

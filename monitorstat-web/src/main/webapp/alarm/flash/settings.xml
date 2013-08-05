@@ -1,0 +1,32 @@
+<settings>
+  <start_on_axis>0</start_on_axis>
+  <plot_area>
+    <border_alpha>100</border_alpha>
+    <margins>
+      <left>50</left>
+      <right>25</right>
+      <top>50</top>
+      <bottom>35</bottom>
+    </margins>
+  </plot_area>
+  <chart_type>line</chart_type>   
+  <axes>
+    <x>
+      <tick_length>5</tick_length>
+      <width>1</width>
+    </x>
+    <y_left>
+      <tick_length>5</tick_length>
+      <width>1</width>
+      <type>Line Graph</type>
+    </y_left>
+  </axes>
+  <labels>
+	<width>50</width> 
+    <label lid="0">
+      <text><![CDATA[<b>Line Graph</b>]]></text>
+      <y>16</y>
+      <align>center</align>
+    </label>
+  </labels>
+</settings>

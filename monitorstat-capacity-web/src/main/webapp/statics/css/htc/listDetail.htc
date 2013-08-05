@@ -1,0 +1,57 @@
+<PUBLIC:ATTACH EVENT="oncontentready" HANDLER="doInit" />
+<PUBLIC:ATTACH EVENT="onmouseover" HANDLER="setFocus" />
+<PUBLIC:ATTACH EVENT="onmouseout" HANDLER="lostFocus" />
+
+<SCRIPT LANGUAGE="jscript">
+var sOriBkColor = "";
+
+//+----------------------------------------------------------------------------
+//
+//  Function:       doInit
+//
+//  Description:    设置sOriBkColor为初始背景色
+//
+//  Arguments:      none
+//
+//  Returns:        nothing
+//
+//-----------------------------------------------------------------------------
+
+function doInit() {
+	sOriBkColor = style.backgroundColor
+}
+
+//+----------------------------------------------------------------------------
+//
+//  Function:       setFocus
+//
+//  Description:    标识焦点行
+//
+//  Arguments:      none
+//
+//  Returns:        nothing
+//
+//-----------------------------------------------------------------------------
+
+function setFocus() {
+	//window.alert("ok")
+	//style.backgroundColor = '#00cccc'
+	//灰色
+	style.backgroundColor = '#B0F177'
+}
+//+----------------------------------------------------------------------------
+//
+//  Function:       lostFocus
+//
+//  Description:    取消焦点
+//
+//  Arguments:      none
+//
+//  Returns:        nothing
+//
+//-----------------------------------------------------------------------------
+
+function lostFocus() {
+	style.backgroundColor = sOriBkColor
+}
+</SCRIPT>

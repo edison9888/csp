@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE log4j:configuration SYSTEM "D:\home\desktop\log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    
+    <appender name="myFile" class="org.apache.log4j.RollingFileAppender">        
+        <param name="File" value="/tmp/logs/config.log" /><!-- 设置日志输出文件名 -->     
+        <!-- 设置是否在重新启动服务时，在原有日志的基础添加新日志 -->     
+        <param name="Append" value="false" />     
+        <param name="MaxBackupIndex" value="2" />     
+        <param name="MaxFileSize" value="100MB" />
+        <param name="encoding" value="GBK"/>     
+         <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d]-%-5p (%F:%L)|%m%n"/>
+        </layout>    
+    </appender>  
+    <root>
+       <level value="INFO" />
+    	<appender-ref ref="myFile" />
+    </root>    
+</log4j:configuration>

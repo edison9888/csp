@@ -1,0 +1,69 @@
+body{
+	margin: 0px;
+}
+#header{
+	height: 26px;
+	position: relative;
+	padding:0 10px;
+}
+.quick-menu{
+	float:right;
+	height:26px;
+}
+.usertips{
+	float:left;
+	height:26px;
+}
+.login-info{
+	float:left;
+	padding-top:3px;
+}
+#nav{
+	display: block;
+	margin: 0px;
+	padding: 0px;
+}
+#nav a{
+	color:#666;
+	text-decoration:none;
+}
+#nav a:hover{
+	color:#FF3300;
+}
+#nav > li{
+	display: block;
+	position: relative;
+	float: left;
+	padding: 1px 4px 0 4px;
+	background:url(images/menu-seperator.png) no-repeat;
+	background-position: right 6px;
+	list-style-type: none;
+}
+#nav > li:hover ul{
+	display: block;
+}
+#nav > li:hover{
+	moz-border-radius: 10px;
+	webkit-border-radius: 10px;
+}
+#nav li ul{
+	display: none;
+	margin: 0px;
+	padding: 0px;
+}
+#nav li ul li{
+	list-style-type: none;
+	padding: 6px 0 0 0;
+}
+#nav li ul li a{
+	display: block;
+	text-decoration: none;
+}
+#nav li ul li:hover a{
+	moz-border-radius: 5px;
+	webkit-border-radius: 5px;
+}
+#nav li span{
+	cursor: pointer;
+	margin: 0px 2px;
+}

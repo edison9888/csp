@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.taobao.csp</groupId>
+		<artifactId>csp-all</artifactId>
+		<version>1.0.1</version>
+	</parent>
+	<groupId>com.taobao.csp</groupId>
+	<artifactId>monitorstat-dependdatacollect</artifactId>
+	<version>${dependdata-collect.version}</version>
+	<name>monitorstat-dependdatacollect</name>
+	<description>收集Eagleeye的数据并导入CSP系统中</description>
+	<dependencies>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>quartz</groupId>
+			<artifactId>quartz</artifactId>
+			<version>1.5.2</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.taobao.csp</groupId>
+			<artifactId>monitorstat-common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<version>2.6.2</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.4</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings> 
+  <font>Tahoma</font>                
+  <depth>20</depth>                  
+  <angle>25</angle>                  
+  
+  <column>
+    <type>100% stacked</type>        
+    <width>70</width>                
+    <grow_time>2</grow_time>         
+    <grow_effect>strong</grow_effect>    
+    <alpha>60</alpha>                
+    <data_labels>
+      <![CDATA[{percents}%]]>        
+    </data_labels>
+    <balloon_text>          
+      <![CDATA[{title}</b>]]> 
+    </balloon_text>    
+  </column>
+  
+  <labels>                       
+    <label>
+      <x>90</x>                  
+      <y>25</y>                  
+      <text_size>14</text_size>  
+      <text>                     
+        <![CDATA[<b>safe</b>]]>
+      </text>        
+    </label>
+  </labels>
+</settings>

@@ -1,0 +1,104 @@
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	margin:0 auto;
+	background: #dbdbdb;  
+ /*   background:#a1f5ea; */
+	padding: 0;
+	color: #000;
+	
+}
+
+ul, ol, dl { 
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	
+	padding-right: 15px;
+	padding-left: 15px; 
+}
+a img { 锛� */
+	border: none;
+}
+
+a:link {
+	color: #42413C;
+	text-decoration: underline; 
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { 
+	text-decoration: none;
+}
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+	background:#FFF;
+	overflow: hidden; 
+}
+
+.header{ float:left; width:960px;; height:120px; border-bottom:2px solid #ea4609; }
+.header_left{ float:left; width:600px; height:120px;}
+.header_right1{ float:left; width:360px; height:80px;}
+.header_right2{ float:left; width:360px; font-size:13px; text-align:center; color:#ea4609; line-height:40px; height:40px;}
+.sidebar1 {
+	float: left;
+	width: 178px;
+	height:650px;
+	border-right:2px solid #ea4609;
+	text-align:center;
+}
+.content {
+	width: 780px;
+}
+.footer{ width:960px; float:left; height:100px; text-align:center; color:#ea4609; border-top:2px solid #ea4609; }
+
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px;
+}
+
+ul.nav {
+	list-style: none; 
+	margin-top:100px;
+}
+ul.nav li {
+	border-bottom: 1px dashed #ea4609; 
+/*	padding:5px;  */
+    padding-top:5px;
+	margin-top:1px;
+}
+ul.nav a, ul.nav a:visited { 
+	display: block; 
+	width: 178px; 
+	text-decoration: none;
+/*	background: #fc5e24;   */ 
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
+/*	background: #ADB96E; */
+	background:#ea4609;
+	color: #FFF;
+}
+
+.fltrt {  
+	float: right;
+	margin-left: 8px;
+}
+.fltlft {
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { 
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+
+#nav li{float:left; list-style:none;font-weight:bolder;font-size: 14px;}
+#nav li a{color:#000;text-decoration:none;display:block;width:100px;height:25px;line-height:25px;text-align:center;background:#ececec;margin-left:2px;}
+#nav li a:hover{background:#336699;color:#eee;}
+
+

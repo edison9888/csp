@@ -1,0 +1,5 @@
+TLog-HBase API使用指南
+http://confluence.taobao.ali.com:8080/pages/viewpage.action?pageId=195524409
+
+
+打包出错，就按照上面url中的步骤来。

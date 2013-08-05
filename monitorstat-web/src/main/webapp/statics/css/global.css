@@ -1,0 +1,189 @@
+SELECT{FONT-FAMILY: 宋体;FONT-SIZE: 9pt;}
+INPUT{FONT-FAMILY: 宋体;FONT-SIZE: 9pt; }
+TABLE{FONT-FAMILY: 宋体;FONT-SIZE: 9pt;}
+DIV{FONT-FAMILY: 宋体;FONT-SIZE: 9pt;}
+SPAN{FONT-FAMILY: 宋体;FONT-SIZE: 9pt;}
+P{FONT-FAMILY: 宋体;FONT-SIZE: 9pt;}
+A{FONT-FAMILY: 宋体;FONT-SIZE: 9pt;}
+TEXTAREA{FONT-SIZE:12pt;font-family:宋体;TEXT-DECORATION:none,line-height:10;}
+body { 
+	font-family:宋体; 
+	font-size:14px;
+	BORDER-BOTTOM: 0px; 
+	BORDER-LEFT: 0px; 
+	PADDING-BOTTOM: 0px; 
+	MARGIN: 0px auto;
+	PADDING-LEFT: 0px; 
+	PADDING-RIGHT: 0px; 
+	BORDER-TOP: 0px; 
+	BORDER-RIGHT: 0px; 
+	PADDING-TOP: 0px
+}
+
+table {
+	color: #000000;
+	font-size: 12px;
+ 	width:100%;
+ 	border-collapse:collapse; 
+}
+
+div {
+	color: #000000;
+	font-size: 12px;
+ 	border-collapse:collapse; 
+ 	BORDER-BOTTOM: 0px; 
+ 	BORDER-LEFT: 0px; 
+ 	PADDING-BOTTOM: 0px; 
+ 	MARGIN: 0px; 
+ 	PADDING-LEFT: 0px; 
+ 	PADDING-RIGHT: 0px; 
+ 	BORDER-TOP: 0px; 
+ 	BORDER-RIGHT: 0px; 
+ 	PADDING-TOP: 0px
+}
+.ui-corner-all {
+    -moz-border-radius: 4px 4px 4px 4px;
+}
+.ui-widget-content {
+    background: url("images/ui-bg_flat_75_ffffff_40x100.png") repeat-x scroll 50% 50% #FFFFFF;
+    border: 1px solid #AAAAAA;
+    color: #222222;
+}
+
+.ui-widget {
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 1.1em;
+}
+
+.ui-dialog {
+    position: relative;
+}
+
+.b1 {
+    /* 
+    background: url("../../images/habo/01.png") repeat scroll 0 0 transparent;
+    */
+    
+    height: 329px;
+    left: 50%;
+    margin-left: -273px;
+    margin-top: -165px;
+    position: absolute;
+    top: 50%;
+    width: 547px;
+    border:solid 1px #4f81bd;
+}
+.b2 {
+    float: center;
+    margin-left: 0;
+    margin-top: 82px;
+    width: 323px;
+}
+#login-form {
+        MARGIN-TOP: 10px; MARGIN-LEFT: 32px
+}
+#login-form DIV {
+        MARGIN-BOTTOM: 15px
+}
+#login-form LABEL {
+        FLOAT: left; WIDTH: 54px; LINE-HEIGHT: 21px; HEIGHT: 21px; TEXT-ALIGN: right
+}
+#login-form .login-btn {
+        FLOAT: left;BORDER-RIGHT: medium none; BORDER-TOP: medium none; BACKGROUND: url(../../images/habo/b.png) 0px 0px; MARGIN: 0px auto; BORDER-LEFT: medium none; WIDTH: 90px; BORDER-BOTTOM: medium none; HEIGHT: 26px;margin-left:50px;cursor :pointer;
+}
+#login-form INPUT.text {
+        WIDTH: 140px; HEIGHT: 14px
+}
+
+.macButton{
+    behavior: url("../css/htc/macButton.htc" );
+    background-color: white;
+    background-image: url("../images/button.gif");
+    border: darkgray 1px solid;
+    height : 22px;
+    font-size : 9pt;
+    text-align: center;
+    cursor: pointer;
+    cue:inherit;
+}
+
+.macButtonOver{
+    behavior: url("../css/htc/macButton.htc" );
+    background-color: white;
+    border: darkgray 1px solid;
+    height : 22px;
+    font-size : 9pt;
+    text-align: center;
+    cursor: pointer;
+}
+
+.macButtonActive{
+    behavior: url("../css/htc/macButton.htc" );
+    background-color: white;
+    border: darkgray 1px solid;
+    height : 22px;
+    font-size : 9pt;
+    text-align: center;
+    cursor: pointer;
+}
+
+.macButtonDisabled{
+    behavior: url("../css/htc/macButton.htc" );
+    background-color: white;
+    background-image: url("../images/button.gif");
+    border: darkgray 1px solid;
+    height : 22px;
+    font-size : 9pt;
+    text-align: center;
+    cursor: pointer;
+}
+
+span#opt {
+    float: right;
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 5px;
+    padding: 1px 10px 0 0;
+}
+a:link {
+  text-decoration: none;
+}
+.hd{
+  background-position: 0 -38px;
+  border: 0px solid #C1D2E9;
+  height: 24px;
+  width: 100%;
+  background: url("images/title_bg.jpg") repeat scroll 0 0 transparent;
+}
+.title{
+  font-weight: bold;
+  font-size: 12;
+}
+.small_title {
+    background: url("images/line_bg_00.gif") repeat-x scroll 0 0 transparent;
+    height: 16px;
+    line-height: 16px;
+}
+
+.x-form-text, textarea.x-form-field {
+    background-color: #FFFFFF;
+    background-image: url("images/text-bg.gif");
+    border-color: #B5B8C8;
+}
+.x-form-field {
+    font: 12px tahoma,arial,helvetica,sans-serif;
+}
+.x-form-text, .ext-ie .x-form-file {
+    height: 22px;
+    line-height: 18px;
+    vertical-align: middle;
+}
+.x-form-text, textarea.x-form-field {
+    background: none repeat-x scroll 0 0 transparent;
+    border: 1px solid;
+    padding: 1px 3px;
+}
+.x-form-field {
+    margin: 0;
+}
+

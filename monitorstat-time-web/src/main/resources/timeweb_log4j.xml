@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="debug-appender" class="org.apache.log4j.ConsoleAppender">        
+        <param name="encoding" value="GBK"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d]- %c-%-5p (%F:%L)|%m%n"/>
+        </layout>
+    </appender>
+    <appender name="timewebLog" class="org.apache.log4j.RollingFileAppender">        
+        <param name="File" value="/home/admin/logs/timeweb.log" /><!-- 设置日志输出文件名 -->     
+        <!-- 设置是否在重新启动服务时，在原有日志的基础添加新日志 -->     
+        <param name="Append" value="false" />     
+        <param name="MaxBackupIndex" value="2" />     
+        <param name="MaxFileSize" value="100MB" />
+        <param name="encoding" value="GBK"/>     
+         <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d]- %c-%-5p (%F:%L)|%m%n"/>
+        </layout>    
+    </appender> 
+    <appender name="alarmSendLog" class="org.apache.log4j.RollingFileAppender">        
+        <param name="File" value="/home/admin/logs/alarmSend.log" /><!-- 设置日志输出文件名 -->     
+        <!-- 设置是否在重新启动服务时，在原有日志的基础添加新日志 -->     
+        <param name="Append" value="false" />     
+        <param name="MaxBackupIndex" value="2" />     
+        <param name="MaxFileSize" value="100MB" />
+        <param name="encoding" value="GBK"/>     
+         <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d]- %c-%-5p (%F:%L)|%m%n"/>
+        </layout>    
+    </appender>
+     <appender name="baselineLog" class="org.apache.log4j.RollingFileAppender">        
+        <param name="File" value="/home/admin/logs/baseline.log" /><!-- 设置日志输出文件名 -->     
+        <!-- 设置是否在重新启动服务时，在原有日志的基础添加新日志 -->     
+        <param name="Append" value="false" />     
+        <param name="MaxBackupIndex" value="2" />     
+        <param name="MaxFileSize" value="100MB" />
+        <param name="encoding" value="GBK"/>     
+         <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d]- %c-%-5p (%F:%L)|%m%n"/>
+        </layout>    
+    </appender>
+    <appender name="hbaseLog" class="org.apache.log4j.RollingFileAppender">        
+        <param name="File" value="/home/admin/logs/hbase.log" /><!-- 设置日志输出文件名 -->     
+        <!-- 设置是否在重新启动服务时，在原有日志的基础添加新日志 -->     
+        <param name="Append" value="false" />     
+        <param name="MaxBackupIndex" value="2" />     
+        <param name="MaxFileSize" value="100MB" />
+        <param name="encoding" value="GBK"/>     
+         <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d]- %c-%-5p (%F:%L)|%m%n"/>
+        </layout>    
+    </appender>
+    <appender name="cronTaskLogAppend" class="org.apache.log4j.RollingFileAppender">        
+        <param name="File" value="/home/admin/logs/cronTaskLog.log" /><!-- 设置日志输出文件名 -->     
+        <!-- 设置是否在重新启动服务时，在原有日志的基础添加新日志 -->     
+        <param name="Append" value="false" />     
+        <param name="MaxBackupIndex" value="2" />     
+        <param name="MaxFileSize" value="100MB" />
+        <param name="encoding" value="GBK"/>     
+         <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d]- %c-%-5p (%F:%L)|%m%n"/>
+        </layout>    
+    </appender>     
+    <logger name="com.taobao.csp.alarm.baseline">
+    	<level value="INFO" />
+    	<appender-ref ref="baselineLog" />
+	</logger>
+    <logger name="com.taobao.csp.alarm">
+    	<level value="INFO" />
+    	<appender-ref ref="alarmSendLog" />
+	</logger>
+	<logger name="com.taobao.csp.dao.hbase.base">
+    	<level value="DEBUG" />
+    	<appender-ref ref="hbaseLog" />
+	</logger>
+	<logger name="cronTaskLog">
+    	<level value="INFO" />
+    	<appender-ref ref="cronTaskLogAppend" />
+	</logger>	
+	 <root>
+       <level value="WARN" />
+    	<appender-ref ref="timewebLog" />
+    </root>      
+</log4j:configuration>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE log4j:configuration SYSTEM "D:\home\desktop\log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    
+    <appender name="debug-appender" class="org.apache.log4j.ConsoleAppender">        
+        <param name="encoding" value="GBK"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d]-%-5p (%F:%L)|%m%n"/>
+        </layout>
+    </appender>
+    
+    <appender name="myFile" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/tmp/logs/cost.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %m%n" />
+		</layout>
+	</appender>
+    
+    <logger name="com.taobao" additivity="false">
+    	<level value="warn" />
+    	<appender-ref ref="myFile" />
+	</logger>
+	
+    <root>
+   		 <level value="warn" />
+    	<appender-ref ref="myFile" />
+    	<appender-ref ref="debug-appender" />
+    </root>    
+    
+</log4j:configuration>

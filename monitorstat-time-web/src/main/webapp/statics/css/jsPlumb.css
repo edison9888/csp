@@ -1,0 +1,49 @@
+.window,.label {
+	cursor: pointer;
+	box-shadow: 2px 2px 19px #aaa;
+	-o-box-shadow: 2px 2px 19px #aaa;
+	-webkit-box-shadow: 2px 2px 19px #aaa;
+	-moz-box-shadow: 2px 2px 19px #aaa;
+}
+
+.component {
+	opacity: 0.8;
+	filter: alpha(opacity =     80);
+	background-color: white;
+	color: black;
+	font-family: helvetica;
+	padding: 0.5em;
+}
+
+.window {
+	border: 2px solid #346789;
+	width: 150px;
+	height: 100px;
+	z-index: 20;
+	position: absolute;
+	font-size: 0.8em;
+	/*margin:1em;*/
+}
+
+.label {
+	border: 1px solid #346789;
+	padding: 8px;
+	padding: 8px;
+}
+
+.label:hover {
+	border-color: #5d94a6;
+}
+
+/*依赖部分使用，勿删!*/
+.itemWindow {
+	border: 2px solid #346789;
+	width: 250px;
+	height: auto;
+	z-index: 20;
+	position: absolute;
+	font-size: 0.8em;
+	word-break:break-all;
+	/*overflow:auto;*/
+	/*margin:1em;*/
+}

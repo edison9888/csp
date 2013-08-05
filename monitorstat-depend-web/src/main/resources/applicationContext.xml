@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+   <bean id="notifyDao" class="com.taobao.csp.depend.dao.NotifyDao"></bean>
+  <bean id="beiDouDao" class="com.taobao.csp.depend.dao.BeiDouDao"></bean>
+  <bean id="cspDependentDao" class="com.taobao.csp.depend.dao.CspDependentDao"></bean>
+  <bean id="eagleeyeDataDao" class="com.taobao.monitor.common.db.impl.center.EagleeyeDataDao"></bean>
+  <bean id="cspDependInfoDao" class="com.taobao.monitor.common.db.impl.center.CspDependInfoDao"></bean>
+  <bean id="cspCheckupDependDao" class="com.taobao.csp.depend.dao.CspCheckupDependDao"></bean>
+  <bean id="appInfoDao" class="com.taobao.monitor.common.db.impl.center.AppInfoDao"/>
+  <bean id="cspAppHsfDependProvideDao" class="com.taobao.csp.depend.dao.CspAppHsfDependProvideDao"/>
+  <bean id="cspAppHsfDependConsumeDao" class="com.taobao.csp.depend.dao.CspAppHsfDependConsumeDao"/>
+  <bean id="cspAppTairConsumeDao" class="com.taobao.csp.depend.dao.CspAppTairConsumeDao"/>
+  <bean id="urlDao" class="com.taobao.csp.depend.dao.UrlDao"/>
+  <bean id="cspTddlConsumeDao" class="com.taobao.csp.depend.dao.CspTddlConsumeDao"/>
+  <bean id="cspTfsProviderDao" class="com.taobao.csp.depend.dao.CspTfsProviderDao"/>
+  <bean id="monitorDayDao" class="com.taobao.csp.depend.dao.MonitorDayDao"/>
+  <bean id="tddlService" class="com.taobao.csp.depend.service.impl.TDDLServiceImpl"/>
+  <bean id="tcReportDao" class="com.taobao.monitor.common.db.impl.other.TcReportDao"/>
+  
+  <bean id="alarmJob" class="com.taobao.csp.depend.alarm.AlarmCenter"></bean>  
+  <bean id="callEagleeyeApiJob" class=" com.taobao.csp.depend.job.CallEagleeyeApiJob" />
+  <bean id="buildDependRelationJob" class=" com.taobao.csp.depend.job.BuildDependRelationJob" />
+    
+  <bean id="startUpParamWraper" class="com.taobao.csp.depend.util.StartUpParamWraper">
+  	<property name="startUpParam">
+		<ref local="startUpParam"/> 
+	</property>
+  </bean>
+  <bean id="startUpParam" class="com.taobao.csp.depend.util.StartUpParam" >
+  	<property name="onlineApiUrl" value="http://110.75.18.198:9999/depend/show/dependapi.do?" />
+  	<property name="tfsUrl" value="http://tfs.corp.taobao.com:9999/csp/query.php" />
+  	<property name="ftpPath" value="dependftp" />
+  	<property name="ftpIp" value="10.13.44.88" />
+  	<property name="ftpUsername" value="anonymous" />
+  	<property name="ftpPwd" value="anything" />
+	<property name="eagleEyeApiUrlMap">
+		<map><!-- 线上地址10.246.156.113 -->
+		    <entry key="url_key_list" value="http://10.246.156.113:9999/api/QueryTraceNames" />
+		    <entry key="hsf_key_list" value="http://10.246.156.113:9999/api/QueryServices" />
+			<entry key="child_app" value="2" />
+			<entry key="father_app" value="3" />
+			<entry key="child_key" value="http://10.246.156.113:9999/api/QueryDownstreams" />
+			<entry key="father_key" value="http://10.246.156.113:9999/api/QueryUpstreams" />
+		</map>
+	</property>
+	<property name="eosUrl" value="http://eos.taobao.net:8080/eosconsole/" />	
+  </bean>
+  <bean id="fetchAppDepRelation" class="com.taobao.csp.depend.auto.FetchAppDepRelation">
+	<property name="beiDouDao" ref="beiDouDao" />
+	<property name="cspDependentDao" ref="cspDependentDao" />
+	<property name="portUseAppType">
+		<map>
+			<entry key="9527" value="notify" />
+			<entry key="9777" value="notify" />
+			<entry key="12200" value="hsf" />
+			<entry key="12201" value="hsf" />
+			<entry key="5191" value="tair" />
+			<entry key="2088" value="搜索" />
+			<entry key="5198" value="tair-configserver" />
+			<entry key="4002" value="catserver" />
+			<entry key="1234" value="forst" />
+			<entry key="1521" value="oracle" />
+			<entry key="1522" value="oracle" />
+			<entry key="1523" value="oracle" />
+			<entry key="3301 " value="mysql" />
+			<entry key="3302" value="mysql" />
+			<entry key="3306" value="mysql" />
+			<entry key="3307" value="mysql" />
+			<entry key="3310" value="mysql" />			
+			<entry key="3406" value="mysql" />
+			<entry key="3506" value="mysql" />
+	 		<entry key="8080" value="diamond" />
+			<entry key="8081" value="搜索" />
+			<entry key="4483" value="搜索" />
+			<entry key="9600" value="configserver" />
+			<entry key="2182" value="nosql" />
+			<entry key="2049" value="公共jar包" />
+			<entry key="8609" value="pushit" />
+			<entry key="1111" value="mpp" />
+			<entry key="1112" value="mpp" />
+			<entry key="1113" value="mpp" />
+			<entry key="1114" value="mpp" />
+			<entry key="2181" value="zookeeper" />
+			<entry key="3888" value="zookeeper" />
+			<entry key="8123" value="metaq" />
+		</map>
+	</property>
+	<property name="filterPort">
+		<set>
+			<value>443</value>
+			<value>7001</value>
+			<value>80</value>
+			<value>8009</value>
+			<value>8082</value>
+			<value>8083</value>
+		</set>
+	</property>
+  </bean>
+  
+    <bean id="localQuartzScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false">  
+        <property name="triggers">  
+            <list>  
+                <ref bean="appCheckupTrigger" /> 
+                <ref bean="alarmTrigger" />
+                <ref bean="alarmTrigger2" />
+				<ref bean="callEagleeyeApiTrigger" />
+                <ref bean="buildDependRelationTrigger" />                
+            </list>  
+        </property>  
+        <!-- Quartz配置 -->  
+        <property name="quartzProperties">  
+            <props>  
+                <prop key="org.quartz.threadPool.threadCount">5</prop>  
+            </props>  
+        </property>  
+        <!-- 启动时延期3秒开始任务 -->  
+        <property name="startupDelay" value="15" />  
+    </bean>  
+    
+     <!-- Cron式Trigger定义 -->
+    <!-- 线上检测App间依赖关系 -->  
+    <bean id="appCheckupTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+        <property name="jobDetail" ref="appCheckupDetail" />  
+        <property name="cronExpression" value="0 0 4 * * ?" />  
+    </bean>
+    <bean id="appCheckupDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+        <property name="targetObject" ref="fetchAppDepRelation" />  
+        <property name="targetMethod" value="checkupDepend" />  
+        <property name="concurrent" value="false" />  
+    </bean> 
+    
+    <!-- 依赖系统报警 -->
+    <bean id="alarmTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+        <property name="jobDetail" ref="alarmDetail" />  
+        <property name="cronExpression" value="0 0 9 * * ?" />  
+    </bean>
+    <!-- 依赖系统报警,复查是否报警-->
+    <bean id="alarmTrigger2" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+        <property name="jobDetail" ref="alarmDetail" />  
+        <property name="cronExpression" value="0 0 12 * * ?" />  
+    </bean>
+    
+    <bean id="callEagleeyeApiTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+        <property name="jobDetail" ref="callEagleeyeApiDetail" />  
+        <property name="cronExpression" value="0 30 0-23 * * ?" />  
+    </bean>
+    <bean id="buildDependRelationTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+        <property name="jobDetail" ref="buildDependRelationDetail" />  
+        <property name="cronExpression" value="0 0 3 * * ?" />  
+    </bean>    
+    
+    <bean id="alarmDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+        <property name="targetObject" ref="alarmJob"/>  
+        <property name="targetMethod" value="startAlarmCheck" />  
+        <property name="concurrent" value="false" />  
+    </bean> 
+    <bean id="callEagleeyeApiDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+        <property name="targetObject" ref="callEagleeyeApiJob"/>  
+        <property name="targetMethod" value="callEagleeyeApi" />  
+        <property name="concurrent" value="false" />  
+    </bean> 
+    <bean id="buildDependRelationDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+        <property name="targetObject" ref="buildDependRelationJob"/>  
+        <property name="targetMethod" value="changePartToDayAuto" />  
+        <property name="concurrent" value="false" />  
+    </bean>         
+</beans>

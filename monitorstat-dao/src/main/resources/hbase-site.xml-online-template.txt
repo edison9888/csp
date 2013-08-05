@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+	<property>
+		<name>hbase.rpc.timeout</name>
+		<value>8000</value>
+	</property>
+
+	<property>
+		<name>hbase.ipc.client.tcpnodelay</name>
+		<value>true</value>
+	</property>
+
+	<property>
+		<name>hbase.client.pause</name>
+		<value>10</value>
+	</property>
+
+	<property>
+		<name>hbase.client.prefetch.limit</name>
+		<value>10000</value>
+	</property>
+
+	<property>
+		<name>hbase.zookeeper.quorum</name>
+		<value>10.246.175.75,10.246.175.76,10.246.175.77,10.246.175.78,10.246.175.79</value>
+	</property>
+
+	<property>
+		<name>hbase.zookeeper.property.clientPort</name>
+		<value>3325</value>
+	</property>
+	<property>
+		<name>csp_table_name</name>
+		<value>CSP_RAS_TABLE</value>
+	</property>
+	<property>
+		<name>csp_table_family</name>
+		<value>CSP_REALTIME_DATA</value>
+	</property>
+</configuration>

@@ -1,0 +1,2 @@
+1.Tomcat发布的时候,server.xml中一定要修改Connector的属性uRIEncoding="gbk",Spring的过滤器对URL传递中文无效.
+2.

@@ -1,0 +1,1550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schedule>
+	<properties>
+		<run_scp_local>true</run_scp_local>
+	</properties>
+	<apps>	
+		<app name="hesper" opsfree_name="hesper">
+			<filelist>
+				<file path="/home/admin/logs/mbean.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>	
+                <analyse class="com.taobao.monitor.stat.analyse.TopSqlAnalyse"></analyse>
+                <analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>				
+			</analyses>
+		</app>
+		<app name="sell" opsfree_name="sell">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>	
+                <analyse class="com.taobao.monitor.stat.analyse.TopSqlAnalyse"></analyse>
+                <analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>				
+			</analyses>
+		</app>
+		<app name="detail" opsfree_name="detail">
+			<filelist>				
+				<file path="/home/admin/logs/mbean.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/detail/logs/uicclient.log.${yyyy-MM-dd}" />
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.UicFinalClientLogFileAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="shopsystem" opsfree_name="shopsystem">
+			<filelist>				
+				<file path="/home/admin/logs/mbean.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="shopcenter" opsfree_name="shopcenter">
+			<filelist>
+				<file path="/home/admin/logs/mbean.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/shopcenter/logs/shopcenter/uicclient.log.${yyyy-MM-dd}" />
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.UicFinalClientLogFileAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="buy" opsfree_name="buy">
+			<filelist>
+				<file path="/home/admin/logs/mbean.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/buy/logs/uicclient.log.${yyyy-MM-dd}" />
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.UicFinalClientLogFileAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>	
+		</app>
+		<app name="trademanager" opsfree_name="trademanager">
+			<filelist>
+				<file path="/home/admin/logs/mbean.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/tm/logs/uicclient.log.${yyyy-MM-dd}" />
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>	
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>			
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.UicFinalClientLogFileAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="tbuic" opsfree_name="tbuic">
+			<filelist>
+				<file path="/home/admin/logs/mbean.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>				
+			</analyses>
+		</app>
+		<app name="itemcenter" opsfree_name="itemcenter">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/itemcenter/logs/uicclient.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.UicFinalClientLogFileAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="tc" opsfree_name="tc">
+			<filelist>
+				<file path="/home/admin/logs/mbean.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/tc/logs/uicclient.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.UicFinalClientLogFileAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="designcenter" opsfree_name="designcenter">
+			<filelist>
+				<file path="/home/admin/logs/mbean.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="mytaobao" opsfree_name="mytaobao">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/mytaobao/logs/uicclient.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>	
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>			
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.UicFinalClientLogFileAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="mercury" opsfree_name="mercury">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="shop-street" opsfree_name="shop-street">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="VerticalList" opsfree_name="VerticalList">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="tbskip" opsfree_name="tbskip">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>				
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="magicroom" opsfree_name="magicroom">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>	
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+			</analyses>
+		</app>
+		<app name="webwangwang" opsfree_name="webwangwang">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-ContextLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+                <file path="/home/admin/webwangwang/logs/web-wangwang-login.log.${yyyy-MM-dd}"/>
+                <file path="/home/admin/webwangwang/logs/uicclient.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.WebWangWangOnlineAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.UicFinalClientLogFileAnalyse"></analyse>
+            </analyses>
+		</app>
+		<app name="consign" opsfree_name="consign">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+			</analyses>
+		</app>
+		<app name="logisticscenter" opsfree_name="logisticscenter">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+			</analyses>
+		</app>
+		<app name="mmp" opsfree_name="mmp">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>	
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+			</analyses>
+		</app>
+		<app name="promotioncenter" opsfree_name="promotioncenter">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+			</analyses>
+		</app>
+		<app name="sportal" opsfree_name="sportal">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+			</analyses>
+		</app>
+		<app name="dmc" opsfree_name="dmc">
+			<filelist>
+				<file path="/home/admin/dmc/logs/o2h_main.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.DMCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+			</analyses>
+		</app>
+		<app name="vic" opsfree_name="vic">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>				
+				<file path="/home/admin/logs/monitor/monitor.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/vic/logs/uicclient.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.UicFinalClientLogFileAnalyse"></analyse>
+			</analyses>
+		</app>
+		<app name="vist" opsfree_name="vist">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>				
+				<file path="/home/admin/logs/monitor/monitor.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.PingAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+			</analyses>
+		</app>
+		<app name="uicfinal" opsfree_name="uicfinal">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/uicfinal/logs/alarmServiceLogFile.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.UicFinalLogFileAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+			</analyses>
+		</app>
+		<app name="topapi" opsfree_name="topapi">
+			<filelist>
+				<file path="/home/admin/topapi/logs/uicclient.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.UicFinalClientLogFileAnalyse"></analyse>
+			</analyses>
+		</app>
+		<app name="galaxy" opsfree_name="galaxy">
+			<filelist>
+				<file path="/home/admin/galaxy/logs/uicclient.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>			
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.UicFinalClientLogFileAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="wtm" opsfree_name="wtm">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="wdc" opsfree_name="wdc">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="login" opsfree_name="login">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+			</analyses>
+		</app>
+		
+				
+		<app name="hj-upp-billing" opsfree_name="hj-upp-billing">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="hj-upp-mymall" opsfree_name="hj-upp-mymall">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+			</analyses>
+		</app>	
+		<app name="hj-upp-switch" opsfree_name="hj-upp-switch">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="hj-upp-bridge" opsfree_name="hj-upp-bridge">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+			</analyses>
+		</app>	
+		<app name="upp-rating-pretreat" opsfree_name="upp-rating-pretreat">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+			</analyses>
+		</app>
+		<app name="hj-upp-rating" opsfree_name="hj-upp-rating">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>				
+			</analyses>
+		</app>
+		<app name="hjuppaccount" opsfree_name="hjuppaccount">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="ctp" opsfree_name="ctp">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>	
+		<app name="hj-upp-micropay" opsfree_name="hj-upp-micropay">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="hj-upp-finance" opsfree_name="hj-upp-finance">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="hj-pro-sub" opsfree_name="hj-pro-sub">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="misccenter" opsfree_name="misccenter">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="cpgw" opsfree_name="cpgw">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="relationrecommend" opsfree_name="relationrecommend">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="usertag" opsfree_name="usertag">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="punishcenter" opsfree_name="punishcenter">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="servicemanager" opsfree_name="servicemanager">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="memberprofile" opsfree_name="memberprofile">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		<app name="aliadmin" opsfree_name="aliadmin">
+			<filelist>
+				<file path="/home/admin/logs/mbean.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>	
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>				
+			</analyses>
+		</app>
+		<app name="alimall" opsfree_name="alimall">
+			<filelist>
+				<file path="/home/admin/logs/mbean.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MbeanLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>	
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>				
+			</analyses>
+		</app>
+		<app name="malllist" opsfree_name="malllist">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>				
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>	
+			</analyses>
+		</app>
+		<app name="venus" opsfree_name="venus">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>	
+			</analyses>
+		</app>
+		<app name="sellercenter" opsfree_name="sellercenter">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>	
+			</analyses>
+		</app>
+		<app name="sellermanager" opsfree_name="sellermanager">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>	
+			</analyses>
+		</app>
+		<app name="arkadmin" opsfree_name="arkadmin">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>	
+			</analyses>
+		</app>
+		<app name="forest" opsfree_name="forest">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>	
+			</analyses>
+		</app>
+		<app name="spucenter" opsfree_name="spucenter">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>	
+			</analyses>
+		</app>
+		<app name="pamirs-mckinley" opsfree_name="pamirs-mckinley">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>	
+			</analyses>
+		</app>	
+		<app name="justice" opsfree_name="justice">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>	
+			</analyses>
+		</app>
+		<app name="shopmanager" opsfree_name="shopmanager">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>	
+		</app>
+		<app name="dpm" opsfree_name="dpm">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>	
+		</app>
+		<app name="designsystem" opsfree_name="designsystem">
+			<filelist>
+				<file path="/home/admin/logs/gc.log"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+			</analyses>	
+		</app>								
+		<app name="tadget" opsfree_name="tadget">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse"></analyse>
+			</analyses>	
+		</app>								
+		<app name="warehouse" opsfree_name="warehouse">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+			</analyses>	
+		</app>
+		<app name="wwpartner" opsfree_name="wwpartner">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>	
+		</app>								
+		<app name="logisticspartner" opsfree_name="logisticspartner">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>	
+		</app>								
+		<app name="ecrm" opsfree_name="ecrm">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>	
+		</app>								
+		<app name="designmarket" opsfree_name="designmarket">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>	
+		</app>
+		<app name="dpc" opsfree_name="dpc">
+			<filelist>
+				<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+				<file path="/home/admin/logs/gc.log"/>
+			</filelist>
+			<analyses>
+				<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+				<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+			</analyses>
+		</app>
+		
+		<app name="matrix_partner" opsfree_name="matrix_partner">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="matrix_blog" opsfree_name="matrix_blog">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="matrix_friendstory" opsfree_name="matrix_friendstory">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="matrix_tiao" opsfree_name="matrix_tiao">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="matrix_mission" opsfree_name="matrix_mission">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="matrix_album" opsfree_name="matrix_album">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="matrix_apps" opsfree_name="matrix_apps">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="site" opsfree_name="site">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="matrix_ring" opsfree_name="matrix_ring">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+
+<app name="communitycount" opsfree_name="communitycount">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="communitytag" opsfree_name="communitytag">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="matrix_cc" opsfree_name="matrix_cc">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="infosearch" opsfree_name="infosearch">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="portaluc" opsfree_name="portaluc">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="tougao" opsfree_name="tougao">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="tstar" opsfree_name="tstar">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="dianping" opsfree_name="dianping">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="snsmisc" opsfree_name="snsmisc">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="snsmobile" opsfree_name="snsmobile">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="matrix_wwc" opsfree_name="matrix_wwc">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="matrix_subsoil" opsfree_name="matrix_subsoil">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="matrix_fa" opsfree_name="matrix_fa">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="matrix_ac" opsfree_name="matrix_ac">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="communityuis" opsfree_name="communityuis">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>	
+	</analyses>
+</app>
+<app name="snsgalaxyconsumer" opsfree_name="snsgalaxyconsumer">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>	
+	</analyses>
+</app>	
+<app name="snsgalaxyprovider" opsfree_name="snsgalaxyprovider">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>	
+	</analyses>
+</app>	
+<app name="terminator_search" opsfree_name="terminator_search">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>	
+	</analyses>
+</app>	
+<app name="cms" opsfree_name="cms">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>	
+	</analyses>
+</app>	
+<app name="matrix_wwporter" opsfree_name="matrix_wwporter">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>	
+	</analyses>
+</app>	
+<app name="matrix_uc" opsfree_name="matrix_uc">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>	
+	</analyses>
+</app>	
+<app name="matrix_mc" opsfree_name="matrix_mc">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>	
+	</analyses>
+</app>	
+<app name="matrix_fc" opsfree_name="matrix_fc">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>	
+	</analyses>
+</app>	
+<app name="matrix_crust" opsfree_name="matrix_crust">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>	
+	</analyses>
+</app>
+
+<app name="matrix_gapp" opsfree_name="matrix_gapp">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>	
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>	
+	</analyses>
+</app>
+<app name="snsju" opsfree_name="snsju">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>	
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+	</analyses>
+</app>
+<app name="matrixtry" opsfree_name="matrixtry">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>	
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+	</analyses>
+</app>
+<app name="poster" opsfree_name="poster">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>	
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+	</analyses>
+</app>
+<app name="snstaoshare" opsfree_name="snstaoshare">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>	
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+	</analyses>
+</app>
+<app name="matrix_exchange" opsfree_name="matrix_exchange">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>	
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+	</analyses>
+</app>
+<app name="communitypsc" opsfree_name="communitypsc">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="trade_notify" opsfree_name="trade_notify">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="alipay_notify" opsfree_name="alipay_notify">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="trade_sub_notify" opsfree_name="trade_sub_notify">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="mix_notify" opsfree_name="mix_notify">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="file_notify" opsfree_name="file_notify">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="transmitter_notify" opsfree_name="transmitter_notify">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>				
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>
+	</analyses>	
+</app>
+<app name="marketing" opsfree_name="marketing">
+	<filelist>
+		<file path="/home/admin/logs/monitor/monitor-app-org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/monitor/monitor-app-org.jboss.mx.loading.UnifiedClassLoader3.log.${yyyy-MM-dd}"/>
+		<file path="/home/admin/logs/gc.log"/>
+	</filelist>
+	<analyses>
+		<analyse class="com.taobao.monitor.stat.analyse.PvAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.ApacheLogAnalyse"></analyse>	
+		<analyse class="com.taobao.monitor.stat.analyse.MonitorLogAnalyse2"></analyse>		
+		<analyse class="com.taobao.monitor.stat.analyse.HostAnalyse"></analyse>
+		<analyse class="com.taobao.monitor.stat.analyse.GCLogAnalyse"></analyse>	
+	</analyses>
+</app>
+	</apps>		
+</schedule>

@@ -1,0 +1,179 @@
+<chart palette='2' xAxisMinValue='0' xAxisMaxValue='100' yAxisMinValue='0' yAxisMaxValue='100' is3D='1' showFormBtn='1' viewMode='1' allowDrag='0' showformbtn='0' >
+
+<dataset plotBorderAlpha='0' allowDrag='0' showformbtn='0' >
+
+<!-- UserClient -->
+<set x='8' y='69' width='110' height='90' name='Desktop' color='FE3233' id='pc1' imageNode='1' imageurl='Resources/desktop.png' labelAlign='top' imageAlign='middle' alpha='0'  imageWidth='107' imageHeight='67' toolText='Name: PC1 &lt;BR&gt;IP: 202.11.32.123 &lt;BR&gt;Owner: Harry Mac'  allowDrag='1'/>
+<set x='8' y='30' width='108' height='90' name='Laptop' color='33C1FE' id='pc2' imageNode='1' imageurl='Resources/laptop.png' labelAlign='top' alpha='0'  imageAlign='middle' imageWidth='98' imageHeight='67' toolText='Name: PC2 &lt;BR&gt;IP: 202.11.32.124 &lt;BR&gt;Owner: Jim Terry' allowDrag='1'/>
+<set x='19' y='50' radius='40' shape='circle' name='Internet' color='33C1FE' id='internet' allowDrag='1'/>
+<set x='44' y='50' width='106' height='64' name='Firewall' color='33C1FE' id='firewall' imageNode='1' imageurl='Resources/firewall.png' labelAlign='middle' alpha='0' imageWidth='106' imageHeight='64' toolText='Name: Firewall &lt;BR&gt;IP: 202.110.00.00 &lt;BR&gt;Owner: Group Network' allowDrag='1'/>
+
+<!--set x='44' y='70' width='60' height='96' name='Branch Head Office' color='33C1FE' id='BO3'  imageNode='1' imageurl='Resources/server.png' labelAlign='top' alpha='0'  imageWidth='57' imageHeight='70' imageAlign='bottom' allowDrag='1'/!-->
+
+<!-- APPÓ¦ÓÃ -->
+<set x='24' y='90' width='70' height='86' name='LIST' color='33C1FE' id='B01' imageNode='1' imageurl='Resources/terminal.png' alpha='0'  imageWidth='64' imageHeight='65' imageAlign='bottom' labelAlign='top'  toolText='Name: LIST &lt;BR&gt;Capacity: 130 &lt;BR&gt;Warning: N/A' allowDrag='1'/>
+
+<set x='34' y='90' width='70' height='86' name='ShopSystem' color='33C1FE' id='B011' imageNode='1' imageurl='Resources/terminal.png' alpha='0'  imageWidth='64' imageHeight='65' imageAlign='bottom' labelAlign='top'  toolText='Name: ShopSystem &lt;BR&gt;Capacity: 90 &lt;BR&gt;Warning: N/A'/>
+
+<set x='44' y='90' width='70' height='86' name='ITEM' color='33C1FE' id='BO3' imageNode='1' imageurl='Resources/terminal.png' alpha='0'  imageWidth='64' imageHeight='65' imageAlign='bottom' labelAlign='top'  toolText='Name: ITEM &lt;BR&gt;Capacity: 110 &lt;BR&gt;Warning: N/A'/>
+
+<set x='54' y='90' width='70' height='86' name='Login' color='33C1FE' id='BO4' imageNode='1' imageurl='Resources/terminal.png' alpha='0' imageWidth='64' imageHeight='65' imageAlign='bottom' labelAlign='top'  toolText='Name: Login &lt;BR&gt;Capacity: 90 &lt;BR&gt;Warning: N/A'/>
+
+<set x='64' y='90' width='70' height='86' name='MallList' color='33C1FE' id='BO5' imageNode='1' imageurl='Resources/terminal.png' alpha='0' imageWidth='64' imageHeight='65' imageAlign='bottom' labelAlign='top'  toolText='Name: MallList &lt;BR&gt;Capacity: 130 &lt;BR&gt;Warning: N/A'/>
+
+<set x='74' y='90' width='70' height='86' name='Favourite' color='33C1FE' id='BO6' imageNode='1' imageurl='Resources/terminal.png' alpha='0' imageWidth='64' imageHeight='65' imageAlign='bottom' labelAlign='top'  toolText='Name: Favourite &lt;BR&gt;Capacity: 80 &lt;BR&gt;Warning: N/A'/>
+
+
+<!--set x='44' y='85' width='50' height='40' name='Branch Network' color='33C1FE' id='null' alpha='0'/!-->
+
+
+<!-- CÏµÁÐ -->
+<set x='54' y='55' width='60' height='86' name='IC' color='33C1FE' id='PN03'  imageNode='1' imageurl='Resources/server.png' alpha='0'  imageWidth='64' imageHeight='65' imageAlign='top' labelAlign='bottom' toolText='Name: IC &lt;BR&gt;Capacity: 3600 &lt;BR&gt;Warning: N/A'/>
+
+<set x='64' y='55' width='60' height='86' name='TC' color='33C1FE' id='PN04'  imageNode='1' imageurl='Resources/server.png' alpha='0'  imageWidth='64' imageHeight='65' imageAlign='top' labelAlign='bottom' toolText='Name: TC &lt;BR&gt;Capacity: 9000 &lt;BR&gt;Warning: N/A'/>
+
+<set x='74' y='55' width='60' height='86' name='UIC' color='33C1FE' id='PN05'  imageNode='1' imageurl='Resources/server.png' alpha='0'  imageWidth='64' imageHeight='65' imageAlign='top' labelAlign='bottom' toolText='Name: UIC &lt;BR&gt;Capacity: 80 &lt;BR&gt;Warning: N/A'/>
+
+<set x='84' y='55' width='60' height='86' name='SC' color='33C1FE' id='PN06'  imageNode='1' imageurl='Resources/server.png' alpha='0'  imageWidth='64' imageHeight='65' imageAlign='top' labelAlign='bottom' toolText='Name: SC &lt;BR&gt;Capacity: 80 &lt;BR&gt;Warning: N/A'/>
+
+
+<!-- ËÑË÷ -->
+<set x='20' y='68' width='60' height='86' name='Ö÷ËÑ' color='33C1FE' id='PN01'  imageNode='1' imageurl='Resources/SearchEngine.png' alpha='0'  imageWidth='64' imageHeight='65' imageAlign='top' labelAlign='bottom'/>
+<set x='28' y='68' width='60' height='86' name='µêÆÌËÑ' color='33C1FE' id='PN011'  imageNode='1' imageurl='Resources/SearchEngine.png' alpha='0'  imageWidth='64' imageHeight='65' imageAlign='top' labelAlign='bottom'/>
+<set x='36' y='68' width='60' height='86' name='µêÆÌËÑ' color='33C1FE' id='PN03'  imageNode='1' imageurl='Resources/SearchEngine.png' alpha='0'  imageWidth='64' imageHeight='65' imageAlign='top' labelAlign='bottom'/>
+
+<!-- DB -->
+<set x='24' y='15' width='70' height='86' name='ÉÌÆ·¿â' color='33C1FE' id='BO8' imageNode='1' imageurl='Resources/dbserver.png' alpha='0'  imageWidth='64' imageHeight='65' imageAlign='bottom' labelAlign='top' toolText='Name: ÉÌÆ·¿â &lt;BR&gt;Capacity: 80 &lt;BR&gt;Warning: N/A'/>
+
+<set x='34' y='15' width='70' height='86' name='ÉÌÆ·¿â' color='33C1FE' id='BO9' imageNode='1' imageurl='Resources/dbserver.png' alpha='0'  imageWidth='64' imageHeight='65' imageAlign='bottom' labelAlign='top' toolText='Name: ÉÌÆ·¿â &lt;BR&gt;Capacity: 80 &lt;BR&gt;Warning: N/A' />
+
+<set x='44' y='15' width='70' height='86' name='µêÆÌ' color='33C1FE' id='B10' imageNode='1' imageurl='Resources/dbserver.png' alpha='0'  imageWidth='64' imageHeight='65' imageAlign='bottom' labelAlign='top' toolText='Name: µêÆÌ &lt;BR&gt;Capacity: 80 &lt;BR&gt;Warning: N/A'/>
+
+<!-- µ×²ã -->
+<set x='64' y='15' width='60' height='86' name='TAIR' color='33C1FE' id='PN07'  imageNode='1' imageurl='Resources/persistserver.png' alpha='0'  imageWidth='64' imageHeight='65' imageAlign='top' labelAlign='bottom' toolText='Name: TAIR &lt;BR&gt;Capacity: 80 &lt;BR&gt;Warning: N/A'/>
+
+<set x='74' y='15' width='60' height='86' name='TFS' color='33C1FE' id='PN08'  imageNode='1' imageurl='Resources/persistserver.png' alpha='0'  imageWidth='64' imageHeight='65' imageAlign='top' labelAlign='bottom' toolText='Name: TFS &lt;BR&gt;Capacity: 80 &lt;BR&gt;Warning: N/A'/>
+
+<set x='84' y='15' width='60' height='86' name='Forest' color='33C1FE' id='PN09'  imageNode='1' imageurl='Resources/persistserver.png' alpha='0'  imageWidth='64' imageHeight='65' imageAlign='top' labelAlign='bottom' toolText='Name: Forest &lt;BR&gt;Capacity: 80 &lt;BR&gt;Warning: N/A'/>
+
+<!-- list¿òÍ¼ -->
+<set x='14' y='97' width='70' height='86' name='' color='8F8FBD' id='point1' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+<set x='14' y='84' width='70' height='86' name='' color='8F8FBD' id='point2' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+<set x='90' y='97' width='70' height='86' name='' color='8F8FBD' id='point3' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+<set x='90' y='84' width='70' height='86' name='' color='8F8FBD' id='point4' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+
+<!-- IC¿òÍ¼ -->
+<set x='50' y='62' width='70' height='86' name='' color='FF7F00' id='point5' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+<set x='50' y='48' width='70' height='86' name='' color='FF7F00' id='point6' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+<set x='90' y='62' width='70' height='86' name='' color='FF7F00' id='point7' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+<set x='90' y='48' width='70' height='86' name='' color='FF7F00' id='point8' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+
+<!-- DB¿òÍ¼ -->
+<set x='20' y='22' width='70' height='86' name='' color='33C1FE' id='point9' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+<set x='20' y='8' width='70' height='86' name='' color='33C1FE' id='point10' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+<set x='48' y='22' width='70' height='86' name='' color='33C1FE' id='point11' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+<set x='48' y='8' width='70' height='86' name='' color='33C1FE' id='point12' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+
+<!-- µ×²ã¿òÍ¼ -->
+<set x='60' y='22' width='70' height='86' name='' color='33C1FE' id='point13' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+<set x='60' y='8' width='70' height='86' name='' color='33C1FE' id='point14' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+<set x='88' y='22' width='70' height='86' name='' color='33C1FE' id='point15' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+<set x='88' y='8' width='70' height='86' name='' color='33C1FE' id='point16' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+
+<!-- Ó¦ÓÃ¼äÁ´½Ó -->
+<set x='68' y='84' width='70' height='86' name='' color='33C1FE' id='point21' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+<set x='68' y='62' width='70' height='86' name='' color='33C1FE' id='point22' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+<set x='75' y='48' width='70' height='86' name='' color='33C1FE' id='point23' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+<set x='34' y='22' width='70' height='86' name='' color='33C1FE' id='point24' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+<set x='75' y='22' width='70' height='86' name='' color='33C1FE' id='point25' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+
+<!-- HubbleÁ´½Ó -->
+<set x='50' y='54' width='70' height='86' name='' color='33C1FE' id='point31' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+
+<!-- ËÑË÷¿òÍ¼ -->
+<set x='16' y='75' width='70' height='86' name='' color='33C1FE' id='point17' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+<set x='16' y='62' width='70' height='86' name='' color='33C1FE' id='point18' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+<set x='40' y='75' width='70' height='86' name='' color='33C1FE' id='point19' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+<set x='40' y='62' width='70' height='86' name='' color='33C1FE' id='point20' imageNode='1' imageurl='Resources/1.png' alpha='0'  imageWidth='5' imageHeight='5' imageAlign='center' labelAlign='top'/>
+
+
+</dataset>
+<connectors color='FF0000' stdThickness='5'>
+	<connector strength='1.5' from='pc1' label ='100/1000Mbps' to='internet' color='BBBB00' arrowAtStart='0' arrowAtEnd='0'/>
+	<connector strength='1.5' from='pc2' to='internet' label ='100/1000Mbps'  color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='2' label='T1 Line' from='internet' to='firewall' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='1.8' from='BO3' to='firewall' label='Secured' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='BO3' to='BO1' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='BO3' to='BO2' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='1.8' from='PHO' to='firewall' label='Secured' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+
+	<connector strength='0.8' from='CN1' to='CN2' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='CN5' to='CN2' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+
+	<connector strength='0.8' from='CN5' to='CN3' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+
+	<connector strength='0.8' from='CN4' to='CN3' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+
+	<connector strength='0.8' from='CN4' to='CNS' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='CN1' to='CNS' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	-----
+	<connector strength='2' label='T1 Line' from='LIST' to='ShopSystem' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='1.5' from='LIST' label ='10/100Mbps' to='ShopSystem' color='BBBB00' arrowAtStart='0' arrowAtEnd='0'/>
+
+<!-- APP-SE -->
+	<connector strength='0.8' from='B01' to='PN01' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='B01' to='PN001' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+
+<!-- list¿òÍ¼ -->
+	<connector strength='0.8' from='point1' to='point2' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='point3' to='point4' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='point1' to='point3' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='point2' to='point4' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+<!-- IC¿òÍ¼ -->
+	<connector strength='0.8' from='point5' to='point6' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='point5' to='point7' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='point7' to='point8' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='point6' to='point8' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+<!-- DB¿òÍ¼ -->
+	<connector strength='0.8' from='point9' to='point10' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='point11' to='point12' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='point9' to='point11' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='point10' to='point12' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+
+<!-- µ×²ã¿òÍ¼ -->
+	<connector strength='0.8' from='point13' to='point14' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='point15' to='point16' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='point13' to='point15' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='point14' to='point16' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+
+<!-- Ó¦ÓÃ¼äÁ´½Ó¿òÍ¼ -->
+	<connector strength='0.8' from='point21' to='point22' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='point23' to='point24' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='point23' to='point25' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<!-- connector strength='0.8' from='point22' to='point24' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' /!-->
+<!-- HubbleÁ´½Ó -->
+	<connector strength='1.8' from='firewall' to='point31' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='1.8' from='firewall' to='point24' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='1.8' from='firewall' to='point25' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+<!-- ËÑË÷¿òÍ¼ -->
+	<connector strength='0.8' from='point17' to='point18' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='point17' to='point19' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='point19' to='point20' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.8' from='point18' to='point20' color='BBBB00' arrowAtStart='0' arrowAtEnd='0' />
+
+</connectors>
+<vTrendlines>
+	<line startValue='0' endValue='30' color='FF0000' alpha='5' displayValue='ÐÔÄÜ¸ú×ÙÌåÏµ' isTrendZone='1'/>
+	<line startValue='30' endValue='60' color='00FF00' alpha='5' displayValue='CSPÈÝÁ¿¹æ»®' isTrendZone='1'/>
+	<line startValue='60' endValue='100' color='0000FF' alpha='5' displayValue='Internal Network' isTrendZone='1'/>
+</vTrendlines>
+   <styles>
+      <definition>
+         <style name='myHTMLFont' type='font' isHTML='1' />
+      </definition>
+      <application>
+         <apply toObject='DATALABELS' styles='myHTMLFont' />
+         <apply toObject='TOOLTIP' styles='myHTMLFont' />
+      </application>
+   </styles>
+</chart>

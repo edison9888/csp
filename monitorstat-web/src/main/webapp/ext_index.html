@@ -1,0 +1,133 @@
+<html>
+<head>
+  <title>监控首页</title>
+   <style type="text/css">
+	div {
+	    font: normal 12px verdana,arial,tahoma;
+	}
+	html, body {
+	    margin:0;
+	    padding:0;
+	    border:0 none;
+	    overflow:hidden;
+	    height:100%;
+	    width:100%;
+	}
+
+    p {
+        margin:5px;
+    }
+    .settings {
+        background-image:url(../shared/icons/fam/folder_wrench.png);
+    }
+    .nav {
+        background-image:url(../shared/icons/fam/folder_go.png);
+    }
+    .header_class {
+   		 background: #7F99BE url(./statics/extjs/images/layout-browser-hd-bg.gif) repeat-x center;
+	}
+	.header_h1 {
+	    font-size: 16px;
+	    color: #fff;
+	    font-weight: normal;
+	    padding: 5px 10px;
+	}
+	#mian-div h2 {
+    font-size: 12px;
+    color: #555;
+    padding-bottom:5px;
+    border-bottom:1px solid #C3D0DF;
+}
+	#mian-div p {
+    margin: 10px 0;
+	}
+    </style>
+    <link rel="stylesheet" type="text/css" href="./statics/extjs/ext-all.css" />
+    <script type="text/javascript" src="./statics/extjs/ext-base.js"></script>
+    <script type="text/javascript" src="./statics/extjs/ext-all.js"></script>
+  
+    <script type="text/javascript">
+    Ext.onReady(function(){ 
+        Ext.state.Manager.setProvider(new Ext.state.CookieProvider()); 
+
+        var forumTree = new Ext.tree.TreePanel( {
+        	title: '监控信息导航',
+            el: 'navigation-div',
+            useArrows: true,
+            enableDD: true,
+            width: 200,
+            height: 300,
+            autoScroll: true,            
+            rootVisible: false,
+            loader: new Ext.tree.TreeLoader({
+                dataUrl:'ajax/navigation.json'
+            }),
+            root: new Ext.tree.AsyncTreeNode({})
+        });
+
+               
+        var viewport = new Ext.Viewport({
+            layout: 'border',
+            items: [
+            // create instance immediately
+            new Ext.BoxComponent({
+                region: 'north',
+                contentEl: 'header_div'
+            }),{
+    			layout: 'accordion',
+    	    	id: 'left-browser',
+    	        region:'west',
+    	        split:true,
+                width: 200,
+                minSize: 175,
+                maxSize: 400,
+                collapsible: true,
+                margins:'1 0 5 1',
+                cmargins:'1 5 5 1',
+                layout:'accordion',
+                layoutConfig:{
+                    animate:true
+                },  
+    			items: [forumTree,{
+    				id: 'alarm-panel',
+    		        title: '用户信息导航',
+    		        region: 'center',
+    		        bodyStyle: 'padding-bottom:15px;background:#eee;',
+    		        contentEl: 'alarm-div',
+    		        autoScroll:true
+    		    }]
+    		},
+            {
+                id: 'content-panel',
+        		region: 'center', // this is what makes this panel into a region within the containing layout
+        		layout: 'card',
+        		margins: '2 5 5 0',
+        		activeItem: 0,
+        		border: false,
+        		items: [
+        			{
+                        id: 'mian-panel',
+                        title: 'Start Page',
+                        layout: 'fit',
+                        bodyStyle: 'padding:25px',
+                        contentEl: 'mian-div'  // pull existing content from the page
+                    }
+        		]
+        	}]
+        }); 
+    });
+    </script>
+</head>
+<body>
+ 	<div id="header_div" class="header_class">
+        <h1 class="header_h1">核心监控系统</h1>
+    </div>
+    <div id="navigation-div">
+    </div>
+    <div id="alarm-div">
+    </div>
+   	<div id="mian-div">
+           
+    </div>
+</body>
+</html>

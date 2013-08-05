@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<constant name="struts.action.extension" value="action,do,htm"></constant>
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+
+	<package name="pressureAction" extends="struts-default"
+		namespace="/">
+		
+		<global-results>
+			<result name="input">/manualload/error.jsp</result>
+		</global-results>
+		<action name="manualError"
+			class="com.taobao.www.action.PressureAction" method="manualError">
+			<result name="manualerror">/manualload/manualerror.jsp</result>
+		</action>
+		<action name="index"
+			class="com.taobao.www.action.PressureAction" method="index">
+			<result name="index" >
+				/index.jsp
+			</result>
+		</action>
+		<action name="loginSystem"
+			class="com.taobao.www.action.PressureAction" method="loginSystem">
+			<result name="loginSystem" type="redirect">
+				getAllPressures.do
+			</result>
+		</action>
+		<action name="getAllPressures"
+			class="com.taobao.www.action.PressureAction"
+			method="getAllPressures">
+			<result name="listpress">/manualload/listPressures.jsp</result>
+		</action>
+		<action name="addPressures"
+			class="com.taobao.www.action.PressureAction" method="addPressures">
+			<result name="addPressures">/manualload/addPressur.jsp</result>
+		</action>
+		<action name="saveOnePreConfig"
+			class="com.taobao.www.action.PressureAction"
+			method="saveOnePreConfig">
+			<result name="savePreConfig" type="redirect">
+				getAllPreConfigs.do
+			</result>
+			<result name="failed">
+				/manualload/addPressur.jsp
+			</result>
+			<result name="addFailed">
+				/manualload/addFailed.jsp
+			</result>
+		</action>
+		<action name="getAllPreConfigs"
+			class="com.taobao.www.action.PressureAction"
+			method="getAllPreConfigs">
+			<result name="listpreconfig">
+				/manualload/listPreConfigs.jsp
+			</result>
+		</action>
+		<action name="getAllAppMachineByAppId"
+			class="com.taobao.www.action.PressureAction"
+			method="getAllAppMachineByAppId">
+			<result name="listAppMachine">
+				/manualload/listPreMachine.jsp
+			</result>
+		</action>
+		<action name="getOnePreConfig"
+			class="com.taobao.www.action.PressureAction"
+			method="getOnePreConfig">
+			<result name="viewPreConfig">
+				/manualload/preConfigDetail.jsp
+			</result>
+		</action>
+		<action name="autoReady"
+			class="com.taobao.www.action.PressureAction"
+			method="autoReady">
+			<result name="readyPressConfig">
+				/manualload/autoDetail.jsp
+			</result>
+		</action>
+		<action name="executeResultInfo"
+			class="com.taobao.www.action.PressureAction"
+			method="executeResultInfo">
+			<result name="resultInfo">
+				/manualload/exeSchedule.jsp
+			</result>
+		</action>
+		<action name="getAllPresureResultInfo"
+			class="com.taobao.www.action.PressureAction"
+			method="getAllPresureResultInfo">
+			<result name="getAllResultInfo">
+				/manualload/listExeResult.jsp
+			</result>
+		</action>
+		<action name="getOneAppConfigById"
+			class="com.taobao.www.action.PressureAction"
+			method="getOneAppConfigById">
+			<result name="oneObject">/manualload/updateAppConfig.jsp</result>
+		</action>
+		<action name="executePressure"
+			class="com.taobao.www.action.PressureAction"
+			method="executePressure">
+			<result name="failed">
+				/manualload/autoDetail.jsp
+			</result>
+			<result name="executeInfo" type="redirect">
+			executeResultInfo.do?pretime=${appConfig.exeTime}&amp;appname=${appConfig.appName}&amp;other=${appConfig.reqTotle}&amp;appId=${appConfig.id}&amp;flag=${appConfig.preKinds}
+			</result>
+		</action>
+		<action name="delOneAppById"
+			class="com.taobao.www.action.PressureAction"
+			method="delOneAppById">
+			<result name="delSuccess" type="redirect">
+				getAllPreConfigs.do
+			</result>
+		</action>
+		<action name="delAppMachineById"
+			class="com.taobao.www.action.PressureAction"
+			method="delAppMachineById">
+			<result name="deleteSuccess" type="redirect">
+				getAllAppMachineByAppId.do?appId=${appId}
+			</result>
+		</action>
+		<action name="updateOneAppConfig"
+			class="com.taobao.www.action.PressureAction"
+			method="updateOneAppConfig">
+			<result name="updateSucess" type="redirect">
+				getAllPreConfigs.do
+			</result>
+			<result name="oneObject">/manualload/updateAppConfig.jsp</result>
+		</action>
+		<action name="getPressureInformation"
+			class="com.taobao.www.action.PressureAction"
+			method="getPressureInformation">
+			<result name=""></result>
+		</action>
+		<action name="generatePressUrl"
+			class="com.taobao.www.action.PressureAction"
+			method="generatePressUrl">
+			<result name=""></result>
+		</action>
+		<action name="checkUserAndPass"
+			class="com.taobao.www.action.PressureAction"
+			method="checkUserAndPass">
+			<result name=""></result>
+		</action>
+		<action name="synMacchineInfo"
+			class="com.taobao.www.action.PressureAction"
+			method="synMacchineInfo">
+			<result name=""></result>
+		</action>
+		<action name="stopPressInfo"
+			class="com.taobao.www.action.PressureAction"
+			method="stopPressInfo">
+			<result name=""></result>
+		</action>
+		<action name="trackingPressInfo"
+			class="com.taobao.www.action.PressureAction"
+			method="trackingPressInfo">
+			<result name=""></result>
+		</action>
+		<action name="checkAppName"
+			class="com.taobao.www.action.PressureAction"
+			method="checkAppName">
+			<result name=""></result>
+		</action>
+	</package>
+
+</struts>

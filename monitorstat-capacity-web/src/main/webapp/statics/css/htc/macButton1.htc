@@ -1,0 +1,60 @@
+<PUBLIC:COMPONENT lightWeight=false>
+<PUBLIC:DEFAULTS contentEditable=false tabStop=false/>
+
+<PUBLIC:attach event="ondocumentready" onevent="initElement()" />
+<PUBLIC:attach event="onmouseover" onevent="elementOnMouseOver()" />
+<PUBLIC:attach event="onmouseout" onevent="elementOnMouseOut()" />
+<PUBLIC:attach event="onmousedown" onevent="elementOnMouseDown()" />
+<PUBLIC:attach event="onmouseup" onevent="elementOnMouseUp()" />
+<PUBLIC:attach event="onpropertychange" onevent="elementPropertyChange()" />
+
+<script language="JScript">
+
+function initElement(){
+if(disabled) showDisabled(element);
+}
+
+function elementOnMouseOver(){
+showOver(element);
+}
+
+function elementOnMouseOut(){
+showEnabled(element);
+}
+
+function elementOnMouseDown(){
+showActive(element);
+}
+
+function elementOnMouseUp(){
+showEnabled(element);
+}
+
+function elementPropertyChange(){
+if(event.propertyName == "disabled"){
+if(!disabled)
+showEnabled(element);
+else
+showDisabled(element);
+}
+}
+
+function showOver(el){
+el.className = "macButtonOver1"
+}
+
+function showActive(el){
+el.className = "macButtonActive1"
+}
+
+function showDisabled(el){
+el.className = "macButtonDisabled1"
+}
+
+function showEnabled(el){
+el.className = "macButton1"
+}
+
+</script>
+</PUBLIC:COMPONENT>
+

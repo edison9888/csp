@@ -1,0 +1,12 @@
+1.测试用例（在BtraceClient中自动开启了一个线程用来测试，已经注释掉了。）
+
+a.测试静态类:
+	className:com.taobao.test.TestFieldThread2
+	fieldName:strField
+
+b.测试注入类
+	className:com.taobao.test.MutiDemo
+	methodname:say
+	fieldName:
+	静态：     staticMutiField
+	非静态：mutiField

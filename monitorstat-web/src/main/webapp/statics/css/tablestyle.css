@@ -1,0 +1,122 @@
+body {
+	font-size: 62.5%;
+}
+
+table {
+	margin: 1em 0;
+	border-collapse: collapse;
+	width: 100%;
+	font-size: 12px;
+	margin: 0px 0;
+}
+
+table td {
+	font-size: 12px;
+}
+#page{
+	margin:0 auto;
+	padding:0 10px;
+}
+#keyinput{
+	width:32%;
+	margin:0 4px;
+}
+#queryappid{
+	width:125px;
+	height:22px;
+}
+#parentGroupSelect{
+	width:182px;
+	height:22px;
+}
+#queryappidbtn{
+	width:65px;
+	height:23px;
+	border:none;
+	margin:0;
+	background:url(images/search-btn.gif) no-repeat;
+	font-family:"Microsoft Yahei";
+	font-weight:bold;
+	cursor:pointer;
+}
+#keyBodyId{
+	width:100%;
+}
+.noresult{
+	padding:6px;
+	font-family:"Microsoft Yahei";
+	font-size:16px;
+	font-weight:bold;
+	color:#FF3333;
+}
+.currentpage{
+	margin:0 10px;
+	font-weight:bold;
+}
+.currentpage strong{
+	color:#0066FF;
+}
+.linkpage{
+	margin:0 3px;
+	font-weight:bold;
+}
+.linkpage a{
+	color:#0066FF;
+}
+.totalresult{
+	height:16px;
+	padding:8px;
+	padding-top: 6px;
+	border-bottom: 1px solid #E0DEDE;
+	font-family:"Microsoft Yahei";
+	font-size:12px;
+}
+.keycount{
+	margin:0 3px;
+	font-weight:bold;
+	color:#FF3333;
+}
+.opselect{
+	width:100%;
+	filter:alpha(Opacity=90);
+	-moz-opacity:0.9;
+	opacity:0.9;
+}
+.stoken a:hover{
+	color:red;
+	font-weight:bold;
+	text-decoration:none;
+}
+.bottomseparater{
+	margin-bottom:10px;
+}
+.topseparater{
+	margin-top:10px;
+}
+.ui-button {
+	outline: 0;
+	margin: 0;
+	padding: .4em 1em .5em;
+	text-decoration: none; ! important;
+	cursor: pointer;
+	position: relative;
+	text-align: center;
+}
+
+.ui-dialog .ui-state-highlight,.ui-dialog .ui-state-error {
+	padding: .3em;
+}
+
+.headcon {
+	font-family: "ËÎÌו";
+	font-size: 12px;
+	font-weight: bold;
+	text-indent: 3px;
+	border-color: #316cb2;
+	/*text-transform: uppercase;*/
+	background: url(images/separator.gif);
+}
+img {
+	cursor:pointer;
+}
+.report_on{background:#bce774;}

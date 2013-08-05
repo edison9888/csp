@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="GB2312"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+        http://www.springframework.org/schema/context  
+        http://www.springframework.org/schema/context/spring-context-2.5.xsd 
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"
+	default-autowire="byName">
+ 
+	<context:annotation-config />
+	
+ <bean id="appDao" class="com.taobao.monitor.common.db.impl.center.AppInfoDao"></bean>
+ <bean id="costDayDaoNew" class="com.taobao.csp.cost.dao.CostDayDaoNew"></bean>
+ <bean id="costDayDao" class="com.taobao.csp.cost.dao.CostDayDao"></bean>
+ <bean id="dependencyDao" class="com.taobao.csp.cost.dao.CspDependencyDao"></bean>
+ <bean id="hostHardDao" class="com.taobao.csp.cost.dao.HostHardDao"></bean>
+  <bean id="monitorDayDao" class="com.taobao.monitor.common.db.impl.day.MonitorDayDao"></bean>
+ 
+ 
+ 
+ <bean id="cspWebDependDao" class="com.taobao.csp.cost.dao.CspWebDependDao"></bean>
+ <bean id="cspTddlDependDao" class="com.taobao.csp.cost.dao.CspTddlDependDao"></bean>
+ <bean id="cspTairDependDao" class="com.taobao.csp.cost.dao.CspTairDependDao"></bean>
+ <bean id="cspHsfDependDao" class="com.taobao.csp.cost.dao.CspHsfDependDao"></bean>
+ <bean id="cspAppDependDao" class="com.taobao.csp.cost.dao.CspAppDependDao"></bean>
+
+ <bean id="hsfStrategy" class="com.taobao.csp.cost.service.day.HsfCostStrategy"></bean>
+  <bean id="tairStrategy" class="com.taobao.csp.cost.service.day.TairCostStrategy"></bean>
+  <bean id="pvStrategy" class="com.taobao.csp.cost.service.day.PvCostStrategy"></bean>
+  <bean id="dbStrategy" class="com.taobao.csp.cost.service.day.DBCostStrategy"></bean>
+
+
+  <bean id="hardCostService" class="com.taobao.csp.cost.service.HardCostService"></bean>
+  <bean id="hostCostService" class="com.taobao.csp.cost.service.HostCostService"></bean>
+  <bean id="dayCostServiceNew" class="com.taobao.csp.cost.service.DayCostServiceNew" init-method="init" >
+  </bean>
+  
+  
+  <bean id="appCostService" class="com.taobao.csp.cost.service.AppCostService">
+  </bean>
+  
+  
+</beans>

@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>WEB旺旺在线人数</title>
+    <style type="text/css">
+        body {
+            font-size: 12px;
+        }
+
+        #ww-content {
+            width: 840px;
+        }
+
+        fieldset {
+            width: 400px;
+            height: 500px;
+        }
+
+        .unit {
+            margin-left: 3px;
+            width: 200px;
+            height: 17px;
+            float: left;
+            font-weight: normal;
+        }
+
+        .line {
+            margin-left: 3px;
+            width: 402px;
+            height: 17px;
+            float: left;
+            font-weight: bold;
+        }
+
+        .data1 {
+            width: 410px;
+            height: 230px;
+            border: 1px solid #DDDDDD;
+            float: left;
+        }
+
+        .data2 {
+            height: 230px;
+            width: 410px;
+            border-top: 1px solid #DDDDDD;
+            border-right: 1px solid #DDDDDD;
+            border-bottom: 1px solid #DDDDDD;
+            float: left;
+        }
+
+        .data3 {
+            width: 410px;
+            height: 260px;
+            border-left: 1px solid #DDDDDD;
+            border-right: 1px solid #DDDDDD;
+            border-bottom: 1px solid #DDDDDD;
+            float: left;
+        }
+
+        .data4 {
+            height: 260px;
+            width: 410px;
+            border-right: 1px solid #DDDDDD;
+            border-bottom: 1px solid #DDDDDD;
+            float: left;
+        }
+
+        .monitor {
+            border-left: 1px solid #DDDDDD;
+            border-right: 1px solid #DDDDDD;
+            border-bottom: 1px solid #DDDDDD;
+            width: 821px;
+            height: 75px;
+            float: left;
+            display: inline-block;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div id="ww-content">
+
+</div>
+<div class="monitor">
+    <br/>
+    <a id="monitor_1" target="_blank">
+        实时在线曲线图
+    </a> <br/>
+    <br/>   
+    <!-- <a id="monitor_2">
+        日报数据
+    </a>-->
+</div>
+<script type="text/javascript">
+    var WW = {
+        Count:{
+            result:function(data) {
+                var view = document.getElementById('ww-content');
+                if (data) {
+                    var contents = '';
+                    contents += '<div class="data1">';
+                    contents += '<div class="line">当天在线：</div>';
+                    contents += '<div class="unit">时间：' + data.now.time + '</div>';
+                    contents += '<div class="unit">在线人数：' + data.now.number + '</div>';
+
+                    contents += '<div class="line">昨天同一时刻在线：</div>';
+                    contents += '<div class="unit">时间：' + data.yestodayNow.time + '</div>';
+                    contents += '<div class="unit">在线人数：' + data.yestodayNow.number + '</div>';
+
+                    contents += '<div class="line">上周同一时刻在线：</div>';
+                    contents += '<div class="unit">时间：' + data.lastweekNow.time + '</div>';
+                    contents += '<div class="unit">在线人数：' + data.lastweekNow.number + '</div>';
+
+                    contents += '<div class="line">历史同一时刻最高在线：</div>';
+                    contents += '<div class="unit">时间：' + data.historyNow.time + '</div>';
+                    contents += '<div class="unit">在线人数：' + data.historyNow.number + '</div>';
+
+                    contents += '</div>';
+
+
+                    contents += '<div class="data2">';
+                    contents += '<div class="line">最近1分钟值：</div>';
+                    for (var i = 0; i < data.oneMinuteList.length; i++) {
+                        contents += '<div class="unit">时间：' + data.oneMinuteList[i].time + '</div>';
+                        contents += '<div class="unit">在线人数：' + data.oneMinuteList[i].number + '</div>';
+                    }
+                    contents += '</div>';
+
+
+                    contents += '<div class="data3">';
+                    contents += '<div class="line">今天最高在线：</div>';
+                    contents += '<div class="unit">时间：' + data.todayMax.time + '</div>';
+                    contents += '<div class="unit">在线人数：' + data.todayMax.number + '</div>';
+
+                    contents += '<div class="line">昨天最高在线：</div>';
+                    contents += '<div class="unit">时间：' + data.yestodayMax.time + '</div>';
+                    contents += '<div class="unit">在线人数：' + data.yestodayMax.number + '</div>';
+
+                    contents += '<div class="line">上周同一天最高在线：</div>';
+                    contents += '<div class="unit">时间：' + data.lastweekDayMax.time + '</div>';
+                    contents += '<div class="unit">在线人数：' + data.lastweekDayMax.number + '</div>';
+
+                    contents += '<div class="line">历史同一天最高在线：</div>';
+                    contents += '<div class="unit">时间：' + data.historyWeekMax.time + '</div>';
+                    contents += '<div class="unit">在线人数：' + data.historyWeekMax.number + '</div>';
+
+                    contents += '<div class="line">历史最高在线：</div>';
+                    contents += '<div class="unit">时间：' + data.historyMax.time + '</div>';
+                    contents += '<div class="unit">在线人数：' + data.historyMax.number + '</div>';
+
+                    contents += '</div>';
+
+                    contents += '<div class="data4">';
+                    contents += '<div class="line">最近2周最高：</div>';
+                    for (var j = 0; j < data.twoWeeksList.length; j++) {
+                        contents += '<div class="unit">时间：' + data.twoWeeksList[j].time + '</div>';
+                        contents += '<div class="unit">在线人数：' + data.twoWeeksList[j].number + '</div>';
+                    }
+                    contents += '</div>';
+
+
+                    view.innerHTML = contents;
+                } else {
+                    view.innerHTML = '读取数据除错。';
+                }
+            }
+        },
+        init:function() {
+            window.setInterval(this.reloadOnlieUser, 5000);
+            var now = new Date();
+            var today = now.getUTCFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate();
+            var yestoday = now.getUTCFullYear() + "-" + (now.getMonth() + 1) + "-" + (now.getDate() - 1);
+            document.getElementById("monitor_1").href = 'http://cm.taobao.net:9999/monitorstat/time/key_detail_time.jsp?keyId=5551&appName=webwangwang&collectTime2=' + today;
+           // document.getElementById("monitor_3").href = 'http://cm.taobao.net:9999/monitorstat/time/key_detail_time.jsp?keyId=5551&appName=webwangwang&collectTime2=' + yestoday;
+            //  document.getElementById("monitor_2").href = 'http://cm.taobao.net:9999/monitorstat/app_detail.jsp?searchDate=' + yestoday + '&selectAppName=webwangwang#webwangwang_app_id';
+        },
+        reloadOnlieUser:function() {
+            var xmlHttp;
+            try {
+                // Firefox, Opera 8.0+, Safari
+                xmlHttp = new XMLHttpRequest();
+            } catch (e) {
+                // Internet Explorer
+                try {
+                    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    try {
+                        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (e) {
+                        alert("您的浏览器不支持AJAX！");
+                        return false;
+                    }
+                }
+            }
+            xmlHttp.open("GET", "webww.jsp?" + (+new Date()), true);
+            xmlHttp.send(null);
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4) {
+                    try {
+                        eval(xmlHttp.responseText);
+                    } catch(e) {
+                        alert("服务器出错了……")
+                    }
+                }
+            }
+        }
+    };
+    WW.init();
+</script>
+<script type="text/javascript" src="webww.jsp"></script>
+</body>
+</html>

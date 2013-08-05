@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE log4j:configuration SYSTEM "D:\home\desktop\log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="PROJECT-DEBUG" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="/home/admin/logs/status.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="GBK"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d]-%-5p (%F:%L)|%m%n"/>
+        </layout>
+    </appender>
+    <appender name="loadrun" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="/home/admin/logs/loadrun.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="GBK"/>
+        <param name="MaxFileSize" value="2000KB"/>
+        <param name="MaxBackupIndex" value="1"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d]-%-5p (%F:%L)|%m%n"/>
+        </layout>
+    </appender>
+    <appender name="selenium" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="/home/admin/logs/selenium.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="GBK"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d]-%-5p (%F:%L)|%m%n"/>
+        </layout>
+    </appender>
+    
+    <appender name="tradeAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="/home/admin/logs/tradereport.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="GBK"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d]-%-5p (%F:%L)|%m%n"/>
+        </layout>
+    </appender>
+    <logger name="SplitFolw" >
+        <level value="info"/>
+        <appender-ref ref="loadrun"/>
+    </logger>
+	<logger name="com.taobao.monitor.selenium" additivity="false"> 
+	    <level value="info"/>        
+        <appender-ref ref="selenium"/>
+        <appender-ref ref="stdout"/>
+	</logger>
+	<logger name="trade.report" additivity="false"> 
+	    <level value="info"/>        
+        <appender-ref ref="tradeAppender"/>
+	</logger>
+    <root>
+        <level value="info"/>        
+        <appender-ref ref="PROJECT-DEBUG"/>
+    </root>   
+</log4j:configuration>

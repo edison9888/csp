@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="messageSenderService"
+       class="com.taobao.hsf.app.spring.util.HSFSpringConsumerBean" init-method="init">
+      <property name="interfaceName"
+               value="com.taobao.messenger.service.MessageSenderService" />
+      <property name="version" value="1.0.0.tianhu" />
+      <property name="target" value="127.0.0.1:12200?_TIMEOUT=3500" />
+    </bean>	
+    <bean id="hsfDataDetailService" class="com.taobao.hsf.app.spring.util.HSFSpringConsumerBean"  init-method="init">
+	      <property name="interfaceName">
+	         <value>com.taobao.monitor.applog.service.HsfDataDetailService</value>
+	      </property>
+	      <property name="version">
+	         <value>1.0.0</value>
+	      </property>
+	      <property name="group">
+	         <value>HSF</value>
+	      </property>
+	      <!--  
+	      <property name="target">
+	         <value>10.13.40.97:12200?_SERIALIZETYPE=hessian</value>
+	      </property>
+	      -->
+	 </bean>
+</beans>

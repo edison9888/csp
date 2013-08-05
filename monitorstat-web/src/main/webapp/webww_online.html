@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>WEB旺旺在线人数</title>
+    <style type="text/css">
+           body {
+            font-size: 12px;
+        }
+
+        #ww-content {
+            width: 500px;
+        }
+
+        fieldset {
+            width: 500px;
+            height: 500px;
+        }
+
+        .unit {
+            margin-left: 3px;
+            width: 200px;
+            height: 17px;
+            float: left;
+            font-weight:normal;
+        }
+
+        .line {
+            margin-left: 3px;
+            width: 500px;
+            height: 17px;
+            float: left;
+            font-weight:bold;
+        }
+
+        .data {
+            border: 1px solid #DDDDDD;
+            float: left;
+            margin-top: 3px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="ww-content">
+
+</div>
+<script type="text/javascript">
+    var WW = {
+        Count:{
+            result:function(data) {
+                var view = document.getElementById('ww-content');
+                if (data) {
+                    var contents = '';
+                    contents += '<div class="data">';
+                    contents += '<div class="line">WEB旺旺在线人数实时统计：</div>';
+                    contents += '<div class="unit">时间：' + data.time + '</div>';
+                    contents += '<div class="unit">在线人数：' + data.now + '</div>';
+                    contents += '</div>';
+                    if (data.today) {
+                        contents += '<div class="data">';
+                        contents += '<div class="line">今天最高：</div>';
+                        contents += '<div class="unit">时间：' + data.today.maxtime + '</div>';
+                        contents += '<div class="unit">在线人数：' + data.today.maxvalue + '</div>';
+                        contents += '<div class="line">今天最低：</div>';
+                        contents += '<div class="unit">时间：' + data.today.mintime + '</div>';
+                        contents += '<div class="unit">在线人数：' + data.today.minvalue + '</div>';
+                        contents += "</div>"
+                    }
+                    if (data.historyNumber) {
+                        contents += '<div class="data">';
+                        contents += '<div class="line">历史最高：</div>';
+                        contents += '<div class="unit">时间：' + data.historyNumber.maxtime + '</div>';
+                        contents += '<div class="unit">在线人数：' + data.historyNumber.maxvalue + '</div>';
+                        contents += '<div class="line">历史最低：</div>';
+                        contents += '<div class="unit">时间：' + data.historyNumber.mintime + '</div>';
+                        contents += '<div class="unit">在线人数：' + data.historyNumber.minvalue + '</div>';
+                        contents += '</div>';
+                    }
+                    if (data.recentlis) {
+                        contents += '<div class="data">';
+                        contents += '<div class="line">最近10分钟值</div>';
+                        for (var i = 0; i < data.recentlis.length; i++) {
+                            contents += '<div class="unit">时间：' + data.recentlis[i].time + '</div>';
+                            contents += '<div class="unit">在线人数：' + data.recentlis[i].data + '</div>';
+                        }
+                        contents += '</div>';
+                    }
+                    view.innerHTML = contents;
+                } else {
+                    view.innerHTML = '读取数据除错。';
+                }
+            }
+        },
+        init:function() {
+            window.setInterval(this.reloadOnlieUser, 5000);
+        },
+        reloadOnlieUser:function() {
+            window.location.reload();
+        }
+    };
+    WW.init();
+</script>
+<script src="webww.jsp" type="text/javascript"></script>
+</body>
+</html>

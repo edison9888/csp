@@ -1,0 +1,47 @@
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<title>Drag Node Chart: Network Administration Diagram | PowerCharts</title>
+
+
+
+<link rel="stylesheet" href="gallery-style.css" type="text/css" />
+
+
+<script language="JavaScript" src="./dependent/Charts/FusionCharts.js"></script>
+
+
+</head>
+
+
+
+<body>
+
+<center class="wrapper">
+
+	<div id="chart-container-element" style="width: 100%px; height: 100%px; margin: 0 auto;">Loading FusionCharts...</div>
+
+	<script type="text/javascript">
+
+       var chartObj = new FusionCharts({
+
+           swfUrl: "./dependent/Charts/DragNode.swf",
+           width: "100%", height: "100%",      
+           dataSource: "./dependent/Data/DragNode2.xml",
+           dataFormat: FusionChartsDataFormats.XMLURL,
+           renderAt: 'chart-container-element'
+        }).render();
+
+    </script> 
+
+</center>
+
+</body>
+
+</html>

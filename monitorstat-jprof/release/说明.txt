@@ -1,0 +1,50 @@
+jporf-1.0.0.jar应该放在/home/admin/jprof/目录
+
+配置文件放在
+/home/admin/jprof/jprof.properties
+如果找不到则读取默认配置文件
+
+在/home/admin/jprof/目录touch stop则停止JProf，最慢一个小时生效
+在/home/admin/jprof/目录rm stop则重新开始JProf，最慢一个小时生效
+
+启动方式：
+在jvm 启动参数中添加-javaagent:jprof-1.0.0.jar,需要写入绝对路径
+
+日志分析
+原始文件输出
+类名:方法名:linenum   执行时间(纳秒)   threadId  stacknum   
+com/taobao/monitor/web/schedule/GetWebWWOnlineNumber:run:61	3000760476	29	0
+
+java -cp jprof-1.0.0.jar com.taobao.jprof.sort.SortMethodJprofData inpath oupath 这个 只是将方法名称一样的全部做合并平均
+输出格式
+类名:方法名:linenum                        总的执行平均时间    总次数     0ms(次数)(百分比)   0-2ms(次数)(百分比) 2-4ms(次数)(百分比)   4-10ms(次数)(百分比) 10-20ms(次数)(百分比)  20-30ms(次数)(百分比)   30-40ms(次数)(百分比)   40以上ms(次数)(百分比)
+com/taobao/hesper/web/core/pipeline/MonitorPerformScreenTemplateValve:performScreenModule:47	41.77	1270	0(0)(0.0)	0(0.0)(0.0)	0(0.0)(0.0)	0(0.0)(0.0)	0(0.0)(0.0)	0(0.0)(0.0)	964(38.69)(0.76)	306(51.49)(0.24)
+
+输出格式
+java -cp jprof-1.0.0.jar com.taobao.jprof.sort.SortTimeJprofData inpath oupath 这个会将父方法的时间减去子方法的时间 
+类名:方法名:linenum                        总的执行平均时间    总次数     0ms(次数)(百分比)   0-2ms(次数)(百分比) 2-4ms(次数)(百分比)   4-10ms(次数)(百分比) 10-20ms(次数)(百分比)  20-30ms(次数)(百分比)   30-40ms(次数)(百分比)   40以上ms(次数)(百分比)
+com/taobao/hesper/web/core/pipeline/MonitorPerformScreenTemplateValve:performScreenModule:47	41.77	1270	0(0)(0.0)	0(0.0)(0.0)	0(0.0)(0.0)	0(0.0)(0.0)	0(0.0)(0.0)	0(0.0)(0.0)	964(38.69)(0.76)	306(51.49)(0.24)
+
+java -cp jprof-1.0.0.jar com.taobao.jprof.sort.SortTreeJprofData inpath oupath  这个会根据stack 层次做合并
+
+配置说明
+在jprof jar 包中有一个配置文件 jprof.properties
+
+debugJprof = false  测试模式  如果是true 下面4个时间配置就无效，dump 与jvm 停止做挂钩，只有在停止jvm才dump 文件
+
+startJprofTime=00:00:00  开始做jprof 的时间段
+endJprofTime = 23:12:12  结束做jprof 的时间段
+eachJprofUseTime = 60    采样数据的时间  单位秒
+eachJprofIntervalTime = 300 采样数据的间隔时间  单位秒
+
+needNanoTime = false; 是否需要
+
+needPrintAllStack = false; 是否将执行时间为0的dump下来
+delayTime = 30  延时 多少时间开始jprof  这个是只是在启动阶段有用
+
+#out log file path
+logFilePath = /tmp/jprof.txt dump 输出
+# separator ';'
+includePackageStartsWith = com.taobao;  包含包头 分号分割
+
+excludePackageStartsWith = sun;javax;java;org.xml;com.sun;com.taobao.jprof;org.objectweb.asm;org.apache.xerces;org.jboss 不包含

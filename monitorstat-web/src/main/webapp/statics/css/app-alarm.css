@@ -1,0 +1,493 @@
+/*
+*
+* Copyright (c) 2012 by TradePlatform Tabaobao Inc.
+* author: hongbing.ww 
+* All rights reserved.
+* date: 2012-04-01
+* CSS for app page
+*
+*/
+body,img,p,h1,h2,h3,h4,h5,h6,form,table,td,ul,li{
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+body {
+	font-family:"Microsoft YaHei", verdana, arial, times, sans-serif;
+	font-size:14px;
+	background-color:#666;
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+h1,h2{ margin: 10px 0; }
+p{ margin: 10px 0; }
+
+pre{ padding: 20px; background-color: #ffffcc; border: solid 1px #fff; }
+
+/** Ò³Ãæ²¼¾Ö
+------------------------------------------------------------*/
+#container{
+	margin:0 auto;
+}
+#banner{
+	overflow:hidden;
+	height:110px;
+	margin:0 auto;
+}
+#movingboard{
+	overflow:hidden;
+	height:110px;
+	margin:0 auto;
+	background:#fcfcfc;
+}
+#header{
+	width:auto;
+	height:48px;
+	padding-top: 6px;
+	border-bottom: 1px solid #E0DEDE;
+	background:url(images/header_bg.png) repeat-x;
+	box-shadow: 0 -1px 0 #fefcfc inset,0 0 4px rgba(0,0,0,.15);
+	-moz-shadow: 0 -1px 0 #fefcfc inset,0 0 4px rgba(0,0,0,.15);
+	-webkit-shadow: 0 -1px 0 #fefcfc inset,0 0 4px rgba(0,0,0,.15);
+}
+.menulist{
+	float:left;
+	margin-top:2px;
+}
+.menulist ul{
+	overflow:auto;
+	margin:0;
+	padding:0;
+}
+.menulist ul li{
+	float:left;
+	height:20px;
+	width:80px;
+	padding:6px 7px;
+	background:url(images/seperator.png) top right no-repeat;
+	list-style:none;
+	text-align:center;
+}
+.menulist ul li a{
+	text-decoration:none;
+	font-weight:bold;
+	margin-right:2px;
+	color:#000;
+}
+.menulist ul li a:hover{
+	color:#f30;
+}
+.menulist ul li.menutail{
+	background:none;
+	zoom:1;
+}
+.menulist ul li a.selected{
+	color:#f60;
+}
+#content{
+	display:none;
+}
+#help{
+	display:none;
+	position:fixed;
+	_position:absolute;
+	bottom:28px;
+	left:12px;
+	width:268px;
+	height:124px;
+	cursor: pointer;
+}
+#tip{
+	width:252px;
+	height:108px;
+	padding:4px 8px;
+	font-size:12px;
+	border:#f60 solid 2px;
+	border-color: #f60;
+	border-radius:8px;
+	background:#fcfcfc;
+	background: linear-gradient(white, #dae5fc);
+	background: -moz-linear-gradient(white, #dae5fc);
+	background: -o-linear-gradient(white, #dae5fc);
+	background: -webkit-linear-gradient(white, #dae5fc);
+	box-shadow:rgba(0, 0, 0, 0.296875) 0px 1px 3px 0px;
+	-moz-shadow: 0 2px 0 #fafbfb inset,0 0 4px rgba(0,0,0,.15);
+	-webkit-shadow: 0 2px 0 #fafbfb inset,0 0 4px rgba(0,0,0,.15);
+}
+#help-close{
+	position:absolute;
+	top:4px;
+	right:0;
+	width:10px;
+	height:10px;
+	background:url(images/help-close.png) no-repeat;
+}
+.hidelink{
+	text-decoration:none;
+	color:inherit;
+}
+.tpicker{
+	width:139px;
+	height:20px;
+}
+#date-picker{
+	float:left;
+	border:1px solid #dedede;
+	margin-right:4px;
+}
+.btnarea{
+	float:right;
+	margin-right:42px;
+	padding:0;
+}
+#opselect{
+	height:26px;
+	width:90px;
+	font-family:"Microsoft YaHei", verdana, arial, times, sans-serif;
+	font-size:14px;
+}
+#dragscreen{
+	float:right;
+}
+#dragscreen img{
+	width:48px;
+	height:48px;
+	margin-top:-6px;
+}
+#date2{
+	padding:4px;
+}
+#date-selected{
+	width:auto;
+	height:54px;
+	min-width:1024px;
+	background:#fcfcfc;
+	background: linear-gradient(white, #dae5fc);
+	background: -moz-linear-gradient(white, #dae5fc);
+	background: -o-linear-gradient(white, #dae5fc);
+	background: -webkit-linear-gradient(white, #dae5fc);
+	box-shadow: 0 2px 0 #fafbfb inset,0 0 4px rgba(0,0,0,.15);
+	-moz-shadow: 0 2px 0 #fafbfb inset,0 0 4px rgba(0,0,0,.15);
+	-webkit-shadow: 0 2px 0 #fafbfb inset,0 0 4px rgba(0,0,0,.15);
+}
+
+/**
+********************************************/
+#timesearch{
+	height:29px;
+	width:56px;
+	background:url("images/search-btn.jpg") repeat-x; 
+	font-family:"Microsoft YaHei";
+}
+.picker{ 
+	padding:10px;
+	overflow:auto;
+}
+.title{
+	float:left;
+	width:244px;
+	padding:4px;
+	text-align:center;
+	font-size:20px;
+}
+.title a{
+	color:black;
+}
+.title a:hover{
+	color:#FF3300;
+}
+
+/** css for time picker
+********************************************/
+#ui-datepicker-div, .ui-datepicker{ font-size: 80%; z-index:10; }
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+/*
+------------------------------------------------------------------------------*/
+#artoo{
+	display:block;
+	width:612px;
+	background:url(images/artoo_bg.png) repeat-y;
+	margin-bottom:12px;
+}
+#artoo table{
+	width:100%;
+	border-top:2px solid #333333;
+	border-left:2px solid #333333;
+}
+#artoo table td{
+	padding:1px;
+	border-bottom:2px solid #333333;
+	border-right:2px solid #333333;
+	font-size:12px;
+	text-align:center;
+}
+#alarminfo{
+	margin:0 auto;
+	overflow:hidden;
+	background:#666;
+	text-align:center;
+}
+.scrollboard{
+	height:451px;
+	width:1216px;
+	margin:0 auto;
+	margin-top:12px;
+}
+.scrollwrapper{
+	position:relative;
+	height:344px;
+	width:1174px;
+	padding:16px 22px 27px 20px;
+	background:url(images/screen.jpg) no-repeat;
+}
+#view-btn{
+	position:absolute;
+	bottom:4px;
+	right:56px;
+	width:65px;
+	height:20px;
+	padding-top:3px;
+	background:url(images/search-btn.gif) no-repeat;
+	font-size:12px;
+	color:#000;
+	text-decoration:none;
+}
+.loading{
+	margin:0 auto;
+	line-height:344px;
+	vertical-align:middle;
+}
+#scrolltext{
+	overflow-y:scroll;
+	height:344px;
+	width:1174px;
+	margin:0;
+	padding:0;
+}
+#scrolltext table{
+	width:100%;
+	border-top:1px solid #333333;
+	border-left:1px solid #333333;
+}
+#scrolltext table td{
+	padding:0;
+	border-bottom:1px solid #333333;
+	border-right:1px solid #333333;
+	font-size:12px;
+	text-align:center;
+	white-space:normal;
+	word-wrap:break-word;
+	word-break:break-all;
+}
+#scrolltext .redvalue{
+	color:red;
+}
+#scrolltext .justice{
+	color:#00519d;
+}
+#tab1{
+	float:left;
+	width:100%;
+}
+.arrow-board{
+	width:1216px;
+	height:64px;
+	margin:0 auto;
+	text-align:center;
+	background:url(images/tips_bg.png) center center no-repeat;
+}
+#sear-left a{
+	text-decoration:none;
+}
+#sear-right a{
+	text-decoration:none;
+}
+.warningapp{
+	padding:4px;
+	font-size:12px;
+}
+.warnappname{
+	font-size:14px;
+	color:black;
+}
+.deployapp{
+	margin-right:8px;
+	font-size:14px;
+	font-weight:bold;
+}
+.deployapp a{
+	text-decoration:none;
+}
+.deployapp a:hover{
+	color:#FF3333;
+	text-decoration:underline;
+}
+
+#changefree{
+	width:612px;
+	z-index:102;
+	background:url(images/changefree_bg.png) repeat-y;
+}
+
+#changefree table{
+	width:100%;
+	border-top:2px solid #333333;
+	border-left:2px solid #333333;
+}
+#changefree table td{
+	padding:1px;
+	border-bottom:2px solid #333333;
+	border-right:2px solid #333333;
+	font-size:12px;
+	text-align:center;
+}
+#wrapall{
+	position:fixed;
+	_position:absolute;
+	z-index:300;
+	top:58px;
+	right:0;
+}
+#hasalarm{
+	display:none;
+}
+
+#datachanged{
+	display:none;
+	position:fixed;
+	_position:absolute;
+	bottom:16px;
+	right:10px;
+	width:612px;
+	z-index:100;
+	padding:0;
+}
+#datahide{
+	position:absolute;
+	top:-14px;
+	left:-14px;
+	width:29px;
+	height:29px;
+	background:url(images/close-button.png) no-repeat;
+	cursor:pointer;
+}
+#datashow{
+	display:none;
+	position:absolute;
+	top:0;
+	left:-36px;
+	width:36px;
+	height:48px;
+	background:url(images/navigate-left.png) no-repeat;
+	cursor:pointer;
+}
+#flashcontainer{
+	width:100%;
+	margin:0 auto;
+	padding:0 auto;
+	
+}
+.flashwrapper{
+	padding:0 auto;
+	text-align:center;
+	clear:both;
+}
+#flashdiv{
+	margin:0 auto;
+	width:1024px;
+	height:768px;
+}
+#wrappannel{
+	position:fixed;
+	_position:absolute;
+	z-index:299;
+	top:6px;
+	left:4px;
+}
+#appId{
+	display:none;
+}
+.bigpadding{
+	padding:100px;
+	color:red;
+	text-align:center;
+	font-size:20px;
+}
+.resultTime{
+	margin:0 4px;
+	font-weight:bold;
+	font-size:14px;
+	color:#000000;
+}
+#selecttip{
+	display:none;
+	position:fixed;
+	_position:absolute;
+	top:20px;
+	right:84px;
+	padding-top:14px;
+	color:red;
+	text-align:center;
+}
+.tairdesc{
+	color:#0487d2;
+	text-decoration:none;
+}
+.tairdesc:hover{
+	text-decoration:underline;
+}
+#tairinfo{
+	display:none;
+	z-index:500;
+	position:absolute;
+	border-radius:8px;
+	background:#fcfcfc;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+}
+.tair-wapper{
+	padding: 15px 15px;
+}
+#etimetip{
+	display:none;
+	position:fixed;
+	_position:absoloute;
+	top:54px;
+	left:54px;
+	overflow: hidden;
+	background-image:url(images/timetip.png);
+	background-repeat: repeat-x;
+	background-color: rgb(255, 234, 168);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border: 1px solid rgb(255, 194, 55);
+	box-shadow: rgba(0, 0, 0, 0.0976563) 0px 2px 4px;
+	color: rgb(130, 98, 0);
+	width: 410px;
+	cursor: pointer;
+}
+.note_msg{
+	width: auto;
+	padding: 8px 10px 9px; 
+	line-height: 16px; 
+	text-align: left; 
+}
+.edate{
+	margin:0 4px;
+	color:#000;
+}
+.tairmeaning{
+	color:#127CE7;
+	cursor: pointer;
+}

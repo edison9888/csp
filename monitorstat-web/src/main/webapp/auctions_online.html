@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>竞拍商品在线人数</title>
+    <style type="text/css">
+        body {
+            font-size: 12px;
+        }
+
+        #auction-content {
+            width: 900px;
+        }
+
+        fieldset {
+            width: 400px;
+            height: 500px;
+        }
+
+        .unit {
+            margin-left: 3px;
+            width: 300px;
+            height: 20px;
+            float: left;
+            font-weight: normal;
+        }
+
+        .line {
+            margin-left: 3px;
+            width: 402px;
+            height: 17px;
+            float: left;
+            font-weight: bold;
+        }
+
+        .data1 {
+            width: 900px;
+            height: 25px;
+            border: 1px solid #DDDDDD;
+            float: left;
+        }
+
+        .monitor {
+            border-left: 1px solid #DDDDDD;
+            border-right: 1px solid #DDDDDD;
+            border-bottom: 1px solid #DDDDDD;
+            width: 821px;
+            height: 75px;
+            float: left;
+            display: inline-block;
+            font-size: 14px;
+        }
+        
+       
+
+		ul{
+		
+		clear:both;
+		
+		padding:0;
+		
+		margin:0;
+		
+		list-style:none;
+		
+		}
+		
+		
+		
+		li{
+		
+		float:left;
+		
+		display: block;
+		
+		width:200px; /*需要修改*/
+		
+		height:auto;
+		
+		padding:0px;
+		
+		margin:0;
+		
+		border: 1px solid #DDDDDD;
+		
+		line-height:20px;
+		
+		}
+		
+		
+
+
+        
+    </style>
+</head>
+<body>
+<div id="auction-content">
+
+</div>
+
+<script type="text/javascript">
+    var Auctions = {
+        Count:{
+            result:function(data) {
+                var view = document.getElementById('auction-content');
+                if (data) {
+                    var contents = '';
+                    
+                    contents += '<div class="data1">';
+                    contents += '总共在线人数：<strong>' + data.totalNumber;
+                    contents += '</strong></div>';
+                    
+                    contents += '<div class="tableCase">';
+					for (var i = 0; i < data.nowList.length; i++) {
+                        contents += '<ul><li><a href="auctions_online_detail_show.jsp?id='+data.nowList[i].id+'">'
+                        			+ data.nowList[i].id 
+									+'</a>&nbsp;&nbsp;</li><li>' + data.nowList[i].time 
+									+ '</li><li>&nbsp;&nbsp;<strong>' 
+									+ data.nowList[i].number + '</strong></li>'
+									+'<li><a target="_blank" href="http://paimai.taobao.com/auction.htm?id='+data.nowList[i].id+'">拍品详情页面</a></li></ul>';
+                        
+                    }
+                    contents += '</div>';
+					
+                    view.innerHTML = contents;
+                } else {
+                    view.innerHTML = '读取数据出错。';
+                }
+            }
+        },
+        init:function() {
+            window.setInterval(this.reloadOnlieUser, 5000);
+        },
+        reloadOnlieUser:function() {
+            var xmlHttp;
+            try {
+                // Firefox, Opera 8.0+, Safari
+                xmlHttp = new XMLHttpRequest();
+            } catch (e) {
+                // Internet Explorer
+                try {
+                    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    try {
+                        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (e) {
+                        alert("您的浏览器不支持AJAX！");
+                        return false;
+                    }
+                }
+            }
+            xmlHttp.open("GET", "auctions_online.jsp?" + (+new Date()), true);
+            xmlHttp.send(null);
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4) {
+                    try {
+                        eval(xmlHttp.responseText);
+                    } catch(e) {
+                       // alert("服务器出错了");
+                    }
+                }
+            }
+        }
+    };
+    Auctions.init();
+</script>
+<script type="text/javascript" src="auctions_online.jsp"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB18030">
+<title>CSP-自动压测</title>
+<script type="text/javascript"	src="statics/jquery/jquery.js"></script>
+<link type="text/css" href="statics/jquery/themes/base/ui.all.css" rel="stylesheet" />
+<link type="text/css" href="statics/commons.css" rel="stylesheet" />
+</head>
+<body>
+
+
+<a href="loadrun/config.do?method=list" >进入压测配置列表</a>
+<a href="loadrun/control.do?method=list" >进入压测控制列表</a>
+<a href="loadrun/show.do?method=list" >进入压测查看列表</a>
+
+<div class="ui-dialog ui-widget ui-widget-content ui-corner-all " style="width: 100%;">
+<div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><font color="#FF0000"> Slave 连接情况</font></div>
+<div class="ui-dialog-content ui-widget-content">
+
+<table cellpadding="0" cellspacing="0" border="1" id="myTable" class="tablesorter" style="width:99%;align:center">
+	<tr class="ui-widget-header ">
+		<td>slave地址</td>
+		<td>slave ID</td>
+		<td>slave 最大Job数</td>
+		<td>slave 当前Job数</td>
+	</tr>
+	<tbody id="loadrunResultTable">
+		
+	</tbody>
+</table>
+
+<table cellpadding="0" cellspacing="0" border="1" id="myTable" class="tablesorter" style="width:99%;align:center">
+	<tr class="ui-widget-header ">
+		<td>slave地址</td>
+		<td>执行JOB</td>
+	</tr>
+	<tbody id="JobTable">
+		
+	</tbody>
+</table>
+
+<table cellpadding="0" cellspacing="0" border="1" id="myTable" class="tablesorter" style="width:99%;align:center">
+	<tr class="ui-widget-header ">
+		<td>手动压测任务</td>
+	</tr>
+	<tbody id="manualTable">
+		
+	</tbody>
+</table>
+
+</div>
+</div>
+
+
+<script type="text/javascript">
+
+function queryLoadValue(){
+	$.getJSON("loadrun/show.do?method=showSlave", {}, function(json){
+		$("#loadrunResultTable").empty();
+		for(var i=0;i<json.length;i++){
+			$("#loadrunResultTable").append("<tr><td>"+json[i]["s"]+"</td><td><a href='loadrun/control.do?method=showClassCache&id="+json[i]["id"]+"' target='_blank'>"+json[i]["id"]+"</a></td><td>"+json[i]["c"]+"</td><td>"+json[i]["j"]+"</td></tr>");
+		}
+		
+	}); 
+	window.setTimeout("queryLoadValue()",30000); 	
+}
+
+function queryJob(){
+	$.getJSON("loadrun/show.do?method=showJob", {}, function(json){
+		$("#JobTable").empty();
+		for(s in json){
+			var a = json[s];
+			var jobs = "";
+			for(var i=0;i<a.length;i++){
+				var m = a[i].split(":");
+				var slaveId = m[0];
+				var jobId = m[1];
+				var jobDetail = m[2];
+				jobs+=jobId+":"+jobDetail+"&nbsp;&nbsp;<a href='loadrun/control.do?method=stopJob&slaveId="+slaveId+"&jobId="+jobId+"'>停止任务</a><br/>";
+			}
+			$("#JobTable").append("<tr><td>"+s+"</td><td>"+jobs+"</td></tr>");
+		}
+		
+	}); 
+	window.setTimeout("queryJob()",30000); 	
+}
+
+function queryManual(){
+	$.getJSON("loadrun/show.do?method=showManual", {}, function(json) {
+		$("#manualTable").empty();
+		for(s in json) {
+			$("#manualTable").append("<tr><td>"+json[s]+"</td></tr>");
+		}
+		
+	});
+	window.setTimeout("queryManual()", 30000);
+}
+
+queryJob();
+queryLoadValue();
+queryManual();
+
+</script>
+</body>
+</html>

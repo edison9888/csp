@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tables>
+	<table name="CSP_RAS_TABLE">
+		<columns>
+			<column name="rowkey" type="string" />
+			<column name="CSP_REALTIME_DATA$Ctime"  mapping="CSP_REALTIME_DATA$C-time" type="string"/>
+			<column name="CSP_REALTIME_DATA$Etimes" mapping="CSP_REALTIME_DATA$E-times" type="string"/>
+			<column name="CSP_REALTIME_DATA$Psize" mapping="CSP_REALTIME_DATA$P-size" type="string"/>
+			<column name="CSP_REALTIME_DATA$Rsize" mapping="CSP_REALTIME_DATA$R-size" type="string"/>
+			<column name="CSP_REALTIME_DATA$C200" mapping="CSP_REALTIME_DATA$C-200" type="string"/>
+			<column name="CSP_REALTIME_DATA$C302" mapping="CSP_REALTIME_DATA$C-302" type="string"/>
+			<column name="CSP_REALTIME_DATA$cother" mapping="CSP_REALTIME_DATA$c-other" type="string"/>
+			
+			<column name="CSP_REALTIME_DATA$error" type="string"/>
+			<column name="CSP_REALTIME_DATA$sucRate" type="string"/>
+			<column name="CSP_REALTIME_DATA$timeout" type="string"/>
+			<column name="CSP_REALTIME_DATA$exception" type="string"/>
+			<column name="CSP_REALTIME_DATA$CPU" type="string"/>
+			<column name="CSP_REALTIME_DATA$LOAD" type="string"/>
+			<column name="CSP_REALTIME_DATA$SWAP" type="string"/>
+			<column name="CSP_REALTIME_DATA$JVMMEMORY" type="string"/>
+			<column name="CSP_REALTIME_DATA$JVMGC"  type="string"/>
+			<column name="CSP_REALTIME_DATA$JVMFULLGC" type="string"/>
+			<column name="CSP_REALTIME_DATA$JVMCMSGC" type="string"/>
+			
+			<column name="CSP_REALTIME_DATA$s" type="string"/>
+			<column name="CSP_REALTIME_DATA$s_rt"  type="string"/>
+			<column name="CSP_REALTIME_DATA$s_f"  type="string"/>
+			<column name="CSP_REALTIME_DATA$ra_s" type="string"/>
+			<column name="CSP_REALTIME_DATA$ra_s_rt" type="string"/>
+			<column name="CSP_REALTIME_DATA$ra_f" type="string"/>
+			
+			<column name="CSP_REALTIME_DATA$ws" type="string"/>
+			<column name="CSP_REALTIME_DATA$re" type="string"/>
+			<column name="CSP_REALTIME_DATA$nc"  type="string"/>
+			<column name="CSP_REALTIME_DATA$InUse" type="string"/>
+			<column name="CSP_REALTIME_DATA$Available" type="string"/>
+			<column name="CSP_REALTIME_DATA$BLOCKED" type="string"/>
+			
+			<column name="CSP_REALTIME_DATA$WAITING" type="string"/>
+			<column name="CSP_REALTIME_DATA$TERMINATED" type="string"/>
+			<column name="CSP_REALTIME_DATA$TIMEDWAITING" type="string"/>
+			<column name="CSP_REALTIME_DATA$RUNNABLE" type="string"/>
+			<column name="CSP_REALTIME_DATA$max" type="string"/>
+			<column name="CSP_REALTIME_DATA$current" type="string"/>
+			<column name="CSP_REALTIME_DATA$getCount" type="string"/>
+		</columns>
+		<primaryKey>rowkey</primaryKey>
+	</table>
+</tables>

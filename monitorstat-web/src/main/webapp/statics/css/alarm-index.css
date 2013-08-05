@@ -1,0 +1,338 @@
+﻿/*
+*
+* Copyright (c) 2012 by TradePlatform Tabaobao Inc.
+* author: hongbing.ww 
+* All rights reserved.
+* date: 2012-04-01
+* CSS for app page
+*
+*/
+body {
+	font-family:"Microsoft YaHei", verdana, arial, times, sans-serif;
+	font-size:14px;
+	background-color:#f9f8f7;
+	margin:0;
+	padding:0;
+	border:0;
+}
+body,img,p,h1,h2,h3,h4,h5,h6,form,table,td,ul,li{
+	margin:0;
+	padding:0;
+	border:0;
+}
+h1,h2{ margin: 10px 0; }
+a{
+	text-decoration:none;
+}
+
+/** 页面布局
+------------------------------------------------------------*/
+#container{
+	margin:0 auto;
+}
+#banner{
+	overflow:hidden;
+	height:110px;
+	margin:0 auto;
+}
+#movingboard{
+	overflow:hidden;
+	height:110px;
+	margin:0 auto;
+	background:#fcfcfc;
+}
+#header{
+	width:auto;
+	height:48px;
+	padding-top: 6px;
+	border-bottom: 1px solid #E0DEDE;
+	background:url(images/header_bg.png) repeat-x;
+	box-shadow: 0 -1px 0 #fefcfc inset,0 0 4px rgba(0,0,0,.15);
+	-moz-shadow: 0 -1px 0 #fefcfc inset,0 0 4px rgba(0,0,0,.15);
+	-webkit-shadow: 0 -1px 0 #fefcfc inset,0 0 4px rgba(0,0,0,.15);
+}
+.menulist{
+	float:left;
+	margin-top:2px;
+}
+.menulist ul{
+	overflow:auto;
+	margin:0;
+	padding:0;
+}
+.menulist ul li{
+	float:left;
+	height:20px;
+	width:90px;
+	padding:6px 4px;
+	background:url(images/seperator.png) top right no-repeat;
+	list-style:none;
+	text-align:center;
+}
+.menulist ul li a{
+	text-decoration:none;
+	font-weight:bold;
+	margin-right:2px;
+	font-size: 14px;
+	color:#000;
+}
+.menulist ul li a:hover{
+	color:#f60;
+}
+.menulist ul li.menutail{
+	background:none;
+	width:106px;
+	zoom:1;
+}
+.menulist ul li a.selected{
+	color:#f60;
+}
+.title{
+	float:left;
+	width:244px;
+	padding:4px;
+	text-align:center;
+	font-size:20px;
+}
+.title a{
+	color:black;
+}
+.title a:hover{
+	color:#f60;
+}
+.hidelink{
+	text-decoration:none;
+	color:inherit;
+}
+#taobaoapp{
+	background:#f9f8f7;
+}
+#tabledata{
+	margin:0 auto;
+	padding:0;
+}
+#help{
+	display:none;
+	position:fixed;
+	_position:absolute;
+	top:212px;
+	left:12px;
+	width:268px;
+	height:124px;
+	box-shadow:rgba(0, 0, 0, 0.296875) 0px 1px 3px 0px;
+}
+#tip{
+	width:252px;
+	height:108px;
+	padding:4px 8px;
+	font-size:12px;
+	border:#f60 solid 2px;
+	border-color: #f60;
+	border-radius:8px;
+	background:#fcfcfc;
+	background: linear-gradient(white, #dae5fc);
+	background: -moz-linear-gradient(white, #dae5fc);
+	background: -o-linear-gradient(white, #dae5fc);
+	background: -webkit-linear-gradient(white, #dae5fc);
+	box-shadow: 0 2px 0 #fafbfb inset,0 0 4px rgba(0,0,0,.15);
+	-moz-shadow: 0 2px 0 #fafbfb inset,0 0 4px rgba(0,0,0,.15);
+	-webkit-shadow: 0 2px 0 #fafbfb inset,0 0 4px rgba(0,0,0,.15);
+}
+#help-close{
+	position:absolute;
+	top:4px;
+	right:0;
+	width:10px;
+	height:10px;
+	background:url(images/help-close.png) no-repeat;
+}
+.chart{
+	overflow:auto;
+	width:1200px;
+	margin:8px auto;
+}
+#chartdiv{
+	float:left;
+}
+#tmallchartdiv{
+	float:right;
+}
+.line-chart{
+	height:auto;
+	margin:8px auto;
+	border: 2px solid #C5D8F8;
+	line-height:26px;
+	background:#fbfffb;
+	text-align:center;
+}
+.line-chart:hover{
+	color:#10cc02;
+}
+.chart-space{
+	overflow:hidden;
+	width:1200px;
+	border: 2px solid #C5D8F8;
+	margin:8px auto;
+}
+.stat-space{
+	overflow:hidden;
+	width:1024px;
+	border: 2px solid #C5D8F8;
+	margin:12px auto;
+}
+.table-space{
+	width:1200px;
+	margin:8px auto;
+}
+.table-space .loadingimg{
+	height:100px;
+	margin:0 auto;
+	border: 2px solid #C5D8F8;
+	padding:72px 0;
+	line-height:100px;
+	vertical-align:middle;
+	text-align:center;
+	background:white;
+}
+.table-space .loadingimg img{
+	border:none;
+}
+.table-space h4{
+	height:32px;
+	background:url(images/menu_bg.jpg) repeat-x;
+	margin:6px auto;
+	border: 2px solid #c5d8f8;
+	line-height:32px;
+	vertical-align:middle;
+	text-align:center;
+}
+.table-space  a{
+	color:#0477b1;
+}
+.table-space  a:hover{
+	color:#f60;
+}
+.gradient-style {
+	font-size: 12px;
+	text-align: left;
+	border-collapse: collapse;
+	margin:0;
+	border: 1px solid #D3DDFF;
+}
+.gradient-styleb tr{
+	overflow:auto;
+	background: #f00;
+	
+}
+.gradient-style th {
+	font-size: 13px;
+	font-weight: normal;
+	background: #B9C9FE url(images/gradhead.png) repeat-x;
+	border-top: 2px solid #D3DDFF;
+	border-bottom: 1px solid #69C;
+	padding: 8px;
+}
+.gradient-style td {
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+	background: #E8EDFF url(images/gradback.png) repeat-x;
+	padding: 8px;
+	white-space:normal;
+	word-wrap:break-word;
+	word-break:break-all;
+}
+.gradient-style tbody tr:hover td {
+	background: #D0DAFD url(gradhover.png) repeat-x;
+	color: #339;
+}
+.gradient-style tfoot tr td {
+	background: #E8EDFF;
+	font-size: 12px;
+	border-top: 1px solid white;
+	border-bottom: 1px solid #D3DDFF;
+}
+
+#shareport table {
+	font-size: 12px;
+	text-align: left;
+	border-collapse: collapse;
+	margin:0;
+	border: 1px solid #D3DDFF;
+}
+#shareport table tr{
+	overflow:auto;
+	background: #f00;
+	
+}
+/*
+#shareport table th {
+	font-size: 13px;
+	font-weight: normal;
+	background: #B9C9FE url(images/gradhead.png) repeat-x;
+	background-color: #F1F1F1;
+	border-top: 2px solid #D3DDFF;
+	border-bottom: 1px solid #69C;
+	border-left: 1px solid #69C;
+	padding: 8px;
+	text-align:center;
+}
+*/
+#shareport table th {
+	font-size: 13px;
+	font-weight: 600;
+	background-color: #c7d3fb;
+	border-top: 2px solid #D3DDFF;
+	border-bottom: 1px solid #69C;
+	border-left: 1px solid #69C;
+	padding: 8px;
+	text-align:center;
+}
+#shareport table td {
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+	border-left: 1px solid #69C;
+	background: #E8EDFF url(images/gradback.png) repeat-x;
+	padding: 8px;
+	text-align:center;
+	white-space:normal;
+	word-wrap:break-word;
+	word-break:break-all;
+}
+#shareport table tbody tr:first{
+	-moz-transition: all 150ms ease-in-out;
+	-webkit-transition: all 200ms ease-in-out;
+	-o-transition: all 150ms ease-in-out;
+	-ms-transition: all 150ms ease-in-out;
+	transition: all 150ms ease-in-out;
+}
+#shareport table tbody tr:last{
+	-moz-transition: all 150ms ease-in-out;
+	-webkit-transition: all 200ms ease-in-out;
+	-o-transition: all 150ms ease-in-out;
+	-ms-transition: all 150ms ease-in-out;
+	transition: all 150ms ease-in-out;
+}
+.redvalue{
+	color:red;
+}
+.bigpadding{
+	padding:100px;
+	color:red;
+	text-align:center;
+	font-size:20px;
+}
+.resultTime{
+	margin:0 4px;
+	font-weight:bold;
+	font-size:14px;
+	color:#000000;
+}
+.tairmeaning{
+	color:#127CE7;
+	cursor: pointer;
+}
+.sharereport{
+	font-weight:600;
+	color:#F30;
+	font-size:16px;
+}

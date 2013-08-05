@@ -1,0 +1,14 @@
+<PUBLIC:COMPONENT>
+<PUBLIC:ATTACH EVENT="onmouseover" ONEVENT="Hilite()" />
+<PUBLIC:ATTACH EVENT="onmouseout" ONEVENT="Restore()" />
+<SCRIPT LANGUAGE="JScript">
+function Hilite(){
+element.style.border = "1px #f60 solid";
+}
+
+function Restore(){
+element.style.border = "none";
+}
+
+</SCRIPT>
+</PUBLIC:COMPONENT>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+	<session-factory>
+
+		<property name="dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		<property name="connection.url">
+		   jdbc:mysql://10.246.144.146:3306/csp_autoload
+		</property>
+		<property name="connection.username">monitor</property>
+		<property name="connection.password">hellolog</property>
+		<property name="connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">none</property>
+		<property name="connection.autoReconnect">true</property>
+	<property name="connection.autoReconnectForPools">true</property>
+	<property name="connection.is-connection-validation-required">
+		true
+	</property>
+		<mapping
+			resource="com/taobao/www/base/entity/AppConfig.hbm.xml" />
+		<mapping
+			resource="com/taobao/www/base/entity/AppMachine.hbm.xml" />
+		<mapping
+			resource="com/taobao/www/base/entity/PressureResult.hbm.xml" />
+
+	</session-factory>
+</hibernate-configuration>

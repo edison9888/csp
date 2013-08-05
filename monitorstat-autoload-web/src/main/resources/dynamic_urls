@@ -1,0 +1,12 @@
+http://bbs.taobao.com/catalog/[0-9 -]+\.htm	
+http://bbs.taobao.com/catalog/reply_success/[0-9 -]+\.htm
+http://bbs.taobao.com/catalog/thread/[0-9 -]+\.htm
+http://bbs.taobao.com/forum/rates/[0-9 -]+\.htm
+http://bbs.taobao.com/st/.+\.htm
+http://.+\.taobao\.com/shop/view_shop\.htm
+http://.+\.taobao\.com/search\.htm
+http://.+\.taobao\.com/favicon\.ico
+http://.+\.tmall\.com/shop/view_shop\.htm
+http://.+\.tmall\.com/search\.htm
+http://.+\.tmall\.com/favicon\.ico
+

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+  <bean id="loadrunTaskMaster" class="com.taobao.csp.loadrun.web.LoadrunTaskMaster"  init-method="init" lazy-init="false" >
+  	<property name="cspLoadRunBo">
+ 		<ref bean="cspLoadRunBo"/>
+ 	</property>
+ 	<property name="loadrunListen">
+ 		<ref bean="manualLoadrunListen"/>
+ 	</property>
+  </bean>
+  
+   <bean id="loadrunWebContainer" class="com.taobao.csp.loadrun.web.LoadrunWebContainer"  >
+  	<property name="loadrunListen">
+ 		<ref bean="manualLoadrunListen"/>
+ 	</property>
+  </bean>
+  
+ <bean id="manualLoadrunListen" class="com.taobao.csp.loadrun.web.ManualLoadrunListen"  >
+  	<property name="cspLoadRunBo">
+ 		<ref bean="cspLoadRunBo"/>
+ 	</property>
+  </bean>
+ 
+ <bean id="cspLoadRunDao" class="com.taobao.csp.loadrun.web.dao.CspLoadRunDao"/>
+ <bean id="appInfoDao" class="com.taobao.monitor.common.db.impl.center.AppInfoDao"/>
+ <bean id="monitorDayDao" class="com.taobao.monitor.common.db.impl.day.MonitorDayDao"/>
+ <bean id="springUtil" class="com.taobao.csp.loadrun.web.util.SpringUtil" />
+ 
+ <bean id="userInfoDao" class="com.taobao.monitor.common.db.impl.center.UserInfoDao"/>
+  <bean id="userPermissionCheck" class="com.taobao.arkclient.csp.UserPermissionCheck">
+  	<property name="userInfoDao">
+ 		<ref bean="userInfoDao"/>
+ 	</property>
+  </bean>
+
+ 
+ <bean id="cspLoadRunBo" class="com.taobao.csp.loadrun.web.bo.CspLoadRunBo">
+ 	<property name="cspLoadRunDao">
+ 		<ref bean="cspLoadRunDao"/>
+ 	</property>
+ 	<property name="appInfoDao">
+ 		<ref bean="appInfoDao"/>
+ 	</property>
+ 	<property name="monitorDayDao">
+ 		<ref bean="monitorDayDao"/>
+ 	</property>
+ </bean>
+ 
+ 
+ <!-- Quartz本地Schduler -->  
+    <bean id="localQuartzScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false">  
+        <!-- Triggers集成 -->  
+        <property name="triggers">  
+            <list>  
+                <ref bean="todayTrigger" /> 
+            </list>  
+        </property>  
+        <!-- Quartz配置 -->  
+        <property name="quartzProperties">  
+            <props>  
+                <prop key="org.quartz.threadPool.threadCount">2</prop>  
+            </props>  
+        </property>  
+        <!-- 启动时延期3秒开始任务 -->  
+        <property name="startupDelay" value="15" />  
+    </bean>  
+  
+    <!-- Cron式Trigger定义 -->  
+    <bean id="todayTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+        <property name="jobDetail" ref="todayResult" />  
+        <property name="cronExpression" value="0 30 10 * * ?" />
+    </bean>  
+  
+    <!-- Cron reportSenderDetail, 基于MethodInvokingJobDetailFactoryBean调用普通Spring Bean -->  
+    <bean id="todayResult" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+        <property name="targetObject" ref="cspLoadRunBo" />  
+        <property name="targetMethod" value="computeTodayResult" />  
+        <!-- 同一任务在前一次执行未完成而Trigger时间又到时是否并发开始新的执行, 默认为true. -->  
+        <property name="concurrent" value="false" />  
+    </bean>   
+ 
+
+</beans>

@@ -1,0 +1,10 @@
+#system base url 
+BASE_URL=http\://manualload.csp.taobao.net\:9999/manualload
+#jump machine name
+JUMP_MACHINE=login1.cm4.taobao.org
+#cpu use rate
+CPU_RATE=75
+# system load rate 
+LOADAVG_RATE=10
+#shell File storage path
+EXECUTEFILE_PATH=/home/admin/apache-tomcat-7.0.27/webapps/manualload/executeFile/

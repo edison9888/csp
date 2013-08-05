@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.springframework.org/schema/beans"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd" >
+
+    <bean
+        id="commonService"
+        class="com.taobao.csp.time.service.impl.CommonServiceImpl" >
+    </bean>
+
+    <bean
+        id="haBoDao"
+        class="com.taobao.monitor.common.db.impl.other.HaBoDao" >
+    </bean>
+
+    <bean
+        id="baseLineDao"
+        class="com.taobao.monitor.common.db.impl.baseline.MonitorBaseLineDao" >
+    </bean>
+
+    <bean
+        id="cspLoadRunDao"
+        class="com.taobao.monitor.common.db.impl.capacity.CspLoadRunDao" >
+    </bean>
+
+    <bean
+        id="cspCapacityDao"
+        class="com.taobao.monitor.common.db.impl.capacity.CspCapacityDao" >
+    </bean>
+
+    <bean
+        id="capacityLoadDao"
+        class="com.taobao.monitor.common.db.impl.capacity.CapacityLoadDao" >
+    </bean>
+
+    <bean
+        id="syncCapacityPlatform"
+        class="com.taobao.csp.time.job.SyncCapacityPlatform" >
+
+        <property name="cspCapacityDao" >
+
+            <ref bean="cspCapacityDao" />
+        </property>
+
+        <property name="commonService" >
+
+            <ref bean="commonService" />
+        </property>
+    </bean>
+
+    <bean
+        id="realTimeLoadJob"
+        class="com.taobao.csp.time.job.RealTimeLoadJob" >
+
+        <property name="capacityLoadDao" >
+
+            <ref bean="capacityLoadDao" />
+        </property>
+
+        <property name="commonService" >
+
+            <ref bean="commonService" />
+        </property>
+    </bean>
+
+    <bean
+        id="calculateRT"
+        class=" com.taobao.csp.time.job.ResponseTimeJob" >
+    </bean>
+
+    <!-- Quartz本地Schduler -->
+
+    <bean
+        id="localQuartzScheduler"
+        class="org.springframework.scheduling.quartz.SchedulerFactoryBean"
+        lazy-init="false" >
+
+        <!-- Triggers集成 -->
+
+        <property name="triggers" >
+
+            <list>
+
+                <ref bean="syncCapacityPlatformCoreTrigger" />
+
+                <ref bean="syncCapacityPlatformNormalTrigger" />
+
+                <ref bean="calculateRTTrigger" />
+
+                <ref bean="grapCapacityLoadTrigger" />
+            </list>
+        </property>
+        <!-- Quartz配置 -->
+
+        <property name="quartzProperties" >
+
+            <props>
+
+                <prop key="org.quartz.threadPool.threadCount" >
+5
+                </prop>
+            </props>
+        </property>
+        <!-- 启动时延期3秒开始任务 -->
+
+        <property
+            name="startupDelay"
+            value="15" />
+    </bean>
+
+    <!-- Cron式Trigger定义 -->
+
+    <bean
+        id="syncCapacityPlatformCoreTrigger"
+        class="org.springframework.scheduling.quartz.CronTriggerBean" >
+
+        <property
+            name="jobDetail"
+            ref="syncCoreCapacityPlatformJob" />
+
+        <property
+            name="cronExpression"
+            value="0 0/5 * * * ?" />
+    </bean>
+
+    <bean
+        id="syncCapacityPlatformNormalTrigger"
+        class="org.springframework.scheduling.quartz.CronTriggerBean" >
+
+        <property
+            name="jobDetail"
+            ref="syncNormalCapacityPlatformJob" />
+
+        <property
+            name="cronExpression"
+            value="0 10 8 * * ?" />
+    </bean>
+
+    <bean
+        id="calculateRTTrigger"
+        class="org.springframework.scheduling.quartz.CronTriggerBean" >
+
+        <property
+            name="jobDetail"
+            ref="calculateRTJob" />
+
+        <property
+            name="cronExpression"
+            value="0 0 1 * * ?" />
+    </bean>
+
+    <bean
+        id="grapCapacityLoadTrigger"
+        class="org.springframework.scheduling.quartz.CronTriggerBean" >
+
+        <property
+            name="jobDetail"
+            ref="grapCapacityLoadJob" />
+
+        <property
+            name="cronExpression"
+            value="0 0 1 * * ?" />
+    </bean>
+
+    <!-- Cron reportSenderDetail, 基于MethodInvokingJobDetailFactoryBean调用普通Spring Bean -->
+
+    <bean
+        id="syncCoreCapacityPlatformJob"
+        class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean" >
+
+        <property
+            name="targetObject"
+            ref="syncCapacityPlatform" />
+
+        <property
+            name="targetMethod"
+            value="syncCoreAppCapacity" />
+        <!-- 同一任务在前一次执行未完成而Trigger时间又到时是否并发开始新的执行, 默认为true. -->
+
+        <property
+            name="concurrent"
+            value="false" />
+    </bean>
+
+    <bean
+        id="syncNormalCapacityPlatformJob"
+        class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean" >
+
+        <property
+            name="targetObject"
+            ref="syncCapacityPlatform" />
+
+        <property
+            name="targetMethod"
+            value="syncNomalAppCapacity" />
+        <!-- 同一任务在前一次执行未完成而Trigger时间又到时是否并发开始新的执行, 默认为true. -->
+
+        <property
+            name="concurrent"
+            value="false" />
+    </bean>
+
+    <bean
+        id="calculateRTJob"
+        class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean" >
+
+        <property
+            name="targetObject"
+            ref="calculateRT" />
+
+        <property
+            name="targetMethod"
+            value="calculateRt" />
+
+        <property
+            name="concurrent"
+            value="false" />
+    </bean>
+    <!-- 从实时抓取单机负荷 -->
+
+    <bean
+        id="grapCapacityLoadJob"
+        class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean" >
+
+        <property
+            name="targetObject"
+            ref="realTimeLoadJob" />
+
+        <property
+            name="targetMethod"
+            value="syncLoadFromRealTimeSystem" />
+
+        <property
+            name="concurrent"
+            value="false" />
+    </bean>
+  <bean id="cpgwService" class="com.taobao.hsf.app.spring.util.HSFSpringConsumerBean">
+    <property name="interfaceName">
+      <value>com.taobao.misccenter.service.EcardSellerService</value>
+    </property>
+    <property name="version">
+      <value>1.0.0</value>
+    </property>
+    <property name="methodSpecials">
+      <list>
+        <bean class="com.taobao.hsf.model.metadata.MethodSpecial">
+          <property name="methodName" value="sum" />
+          <property name="clientTimeout" value="3000" />
+        </bean>
+      </list>
+    </property>
+  </bean>
+      <bean
+        id="SpringContextUtil" class="com.taobao.csp.time.util.ApplicationContextHelper" scope="singleton" lazy-init="false">
+    </bean>
+    
+    <!-- Tair -->
+    <!-- daily configId:mdbcomm-daily; online:mcomm  -->
+	<!-- <bean id="tairCacheService" name="tairCacheService"
+		class="com.taobao.csp.time.tair.impl.TairCacheServiceV23Impl">
+		<property name="configID" value="mdbcomm-daily"></property>
+		<property name="dynamicConfig" value="true"></property>
+	</bean> -->
+</beans>

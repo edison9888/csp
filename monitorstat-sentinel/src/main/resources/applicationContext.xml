@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+ 
+  <bean id="whiteListInterfaceDao" class="com.taobao.sentinel.dao.WhiteListInterfaceDao"></bean>
+  <bean id="blackListInterfaceDao" class="com.taobao.sentinel.dao.BlackListInterfaceDao"></bean>
+  <bean id="blackListAppDao" class="com.taobao.sentinel.dao.BlackListAppDao"></bean>
+  <bean id="refIpDao" class="com.taobao.sentinel.dao.RefIpDao"></bean>
+  <bean id="configVersionDao" class="com.taobao.sentinel.dao.ConfigVersionDao"></bean>
+  <bean id="whiteListCustomerDao" class="com.taobao.sentinel.dao.WhiteListCustomerDao"></bean>
+  <bean id="blackListCustomerDao" class="com.taobao.sentinel.dao.BlackListCustomerDao"></bean>
+  <bean id="flowControlAppDao" class="com.taobao.sentinel.dao.FlowControlAppDao"></bean>
+  <bean id="flowControlInterfaceDao" class="com.taobao.sentinel.dao.FlowControlInterfaceDao"></bean>
+  <bean id="flowControlDependencyDao" class="com.taobao.sentinel.dao.FlowControlDependencyDao"></bean>
+  <bean id="flowControlParamDao" class="com.taobao.sentinel.dao.FlowControlParamDao"></bean>
+  <bean id="interfaceInvokeDao" class="com.taobao.sentinel.dao.InterfaceInvokeDao"></bean>
+  <bean id="userPermissionDao" class="com.taobao.sentinel.dao.UserPermissionDao"></bean>
+  <bean id="dataUrlDao" class="com.taobao.sentinel.dao.DataUrlDao"></bean>
+  <bean id="qpsPeriodDao" class="com.taobao.sentinel.dao.QpsPeriodDao"></bean>
+  <bean id="springUtil" class="com.taobao.sentinel.util.SpringUtil" />
+  
+  <bean id="userPermissionCheck" class="com.taobao.sentinel.permission.UserPermissionCheck">
+  	<property name="userPermissionDao">
+ 		<ref bean="userPermissionDao"/>
+   	</property>
+  </bean>
+  
+  <bean id="whiteListInterfaceBo" class="com.taobao.sentinel.bo.WhiteListInterfaceBo" >
+  	<property name="whiteListInterfaceDao">
+ 		<ref bean="whiteListInterfaceDao"/>
+ 	</property>
+ 	<property name="refIpDao">
+ 		<ref bean="refIpDao"/>
+ 	</property>
+ 	<property name="configVersionDao">
+ 		<ref bean="configVersionDao"/>
+ 	</property>
+ 	<property name="dataUrlDao">
+ 		<ref bean="dataUrlDao"/>
+ 	</property>
+ 	<property name="qpsPeriodDao">
+ 		<ref bean="qpsPeriodDao"/>
+ 	</property>
+  </bean> 
+  
+  <bean id="blackListInterfaceBo" class="com.taobao.sentinel.bo.BlackListInterfaceBo" >
+  	<property name="blackListInterfaceDao">
+ 		<ref bean="blackListInterfaceDao"/>
+ 	</property>
+ 	<property name="refIpDao">
+ 		<ref bean="refIpDao"/>
+ 	</property>
+ 	<property name="configVersionDao">
+ 		<ref bean="configVersionDao"/>
+ 	</property>
+ 	<property name="dataUrlDao">
+ 		<ref bean="dataUrlDao"/>
+ 	</property>
+ 	<property name="qpsPeriodDao">
+ 		<ref bean="qpsPeriodDao"/>
+ 	</property>
+  </bean> 
+  
+  <bean id="blackListAppBo" class="com.taobao.sentinel.bo.BlackListAppBo" >
+  	<property name="blackListAppDao">
+ 		<ref bean="blackListAppDao"/>
+ 	</property>
+ 	<property name="refIpDao">
+ 		<ref bean="refIpDao"/>
+ 	</property>
+ 	<property name="configVersionDao">
+ 		<ref bean="configVersionDao"/>
+ 	</property>
+ 	<property name="dataUrlDao">
+ 		<ref bean="dataUrlDao"/>
+ 	</property>
+ 	<property name="qpsPeriodDao">
+ 		<ref bean="qpsPeriodDao"/>
+ 	</property>
+  </bean> 
+  
+  <bean id="whiteListCustomerBo" class="com.taobao.sentinel.bo.WhiteListCustomerBo" >
+  	<property name="whiteListCustomerDao">
+ 		<ref bean="whiteListCustomerDao"/>
+ 	</property>
+ 	<property name="refIpDao">
+ 		<ref bean="refIpDao"/>
+ 	</property>
+ 	<property name="configVersionDao">
+ 		<ref bean="configVersionDao"/>
+ 	</property>
+ 	<property name="dataUrlDao">
+ 		<ref bean="dataUrlDao"/>
+ 	</property>
+ 	<property name="qpsPeriodDao">
+ 		<ref bean="qpsPeriodDao"/>
+ 	</property>
+  </bean> 
+  
+  <bean id="blackListCustomerBo" class="com.taobao.sentinel.bo.BlackListCustomerBo" >
+  	<property name="blackListCustomerDao">
+ 		<ref bean="blackListCustomerDao"/>
+ 	</property>
+ 	<property name="refIpDao">
+ 		<ref bean="refIpDao"/>
+ 	</property>
+ 	<property name="configVersionDao">
+ 		<ref bean="configVersionDao"/>
+ 	</property>
+ 	<property name="dataUrlDao">
+ 		<ref bean="dataUrlDao"/>
+ 	</property>
+ 	<property name="qpsPeriodDao">
+ 		<ref bean="qpsPeriodDao"/>
+ 	</property>
+  </bean> 
+  
+  <bean id="flowControlInterfaceBo" class="com.taobao.sentinel.bo.FlowControlInterfaceBo" >
+  	<property name="flowControlInterfaceDao">
+ 		<ref bean="flowControlInterfaceDao"/>
+ 	</property>
+ 	<property name="refIpDao">
+ 		<ref bean="refIpDao"/>
+ 	</property>
+ 	<property name="configVersionDao">
+ 		<ref bean="configVersionDao"/>
+ 	</property>
+ 	<property name="dataUrlDao">
+ 		<ref bean="dataUrlDao"/>
+ 	</property>
+ 	<property name="qpsPeriodDao">
+ 		<ref bean="qpsPeriodDao"/>
+ 	</property>
+  </bean> 
+  
+  <bean id="flowControlAppBo" class="com.taobao.sentinel.bo.FlowControlAppBo" >
+  	<property name="flowControlAppDao">
+ 		<ref bean="flowControlAppDao"/>
+ 	</property>
+ 	<property name="refIpDao">
+ 		<ref bean="refIpDao"/>
+ 	</property>
+ 	<property name="configVersionDao">
+ 		<ref bean="configVersionDao"/>
+ 	</property>
+ 	<property name="dataUrlDao">
+ 		<ref bean="dataUrlDao"/>
+ 	</property>
+ 	<property name="qpsPeriodDao">
+ 		<ref bean="qpsPeriodDao"/>
+ 	</property>
+  </bean> 
+  
+  <bean id="flowControlDependencyBo" class="com.taobao.sentinel.bo.FlowControlDependencyBo" >
+  	<property name="flowControlDependencyDao">
+ 		<ref bean="flowControlDependencyDao"/>
+ 	</property>
+ 	<property name="configVersionDao">
+ 		<ref bean="configVersionDao"/>
+ 	</property>
+ 	<property name="dataUrlDao">
+ 		<ref bean="dataUrlDao"/>
+ 	</property>
+ 	<property name="qpsPeriodDao">
+ 		<ref bean="qpsPeriodDao"/>
+ 	</property>
+  </bean> 
+  
+  <bean id="flowControlParamBo" class="com.taobao.sentinel.bo.FlowControlParamBo" >
+  	<property name="flowControlParamDao">
+ 		<ref bean="flowControlParamDao"/>
+ 	</property>
+ 	<property name="refIpDao">
+ 		<ref bean="refIpDao"/>
+ 	</property>
+ 	<property name="configVersionDao">
+ 		<ref bean="configVersionDao"/>
+ 	</property>
+ 	<property name="dataUrlDao">
+ 		<ref bean="dataUrlDao"/>
+ 	</property>
+ 	<property name="qpsPeriodDao">
+ 		<ref bean="qpsPeriodDao"/>
+ 	</property>
+  </bean> 
+      
+  <bean id="commonBo" class="com.taobao.sentinel.bo.CommonBo" >
+  	<property name="whiteListInterfaceBo">
+ 		<ref bean="whiteListInterfaceBo"/>
+ 	</property>
+ 	<property name="blackListInterfaceBo">
+ 		<ref bean="blackListInterfaceBo"/>
+ 	</property>
+ 	<property name="blackListAppBo">
+ 		<ref bean="blackListAppBo"/>
+ 	</property>
+ 	<property name="whiteListCustomerBo">
+		<ref bean="whiteListCustomerBo"/>
+	</property>
+	<property name="blackListCustomerBo">
+		<ref bean="blackListCustomerBo"/>
+	</property>
+	<property name="flowControlInterfaceBo">
+ 		<ref bean="flowControlInterfaceBo"/>
+ 	</property>
+ 	<property name="flowControlAppBo">
+ 		<ref bean="flowControlAppBo"/>
+ 	</property>
+ 	<property name="flowControlDependencyBo">
+ 		<ref bean="flowControlDependencyBo"/>
+ 	</property>
+ 	<property name="flowControlParamBo">
+ 		<ref bean="flowControlParamBo"/>
+ 	</property>
+ 	<property name="configVersionDao">
+ 		<ref bean="configVersionDao"/>
+ 	</property>
+ 	<property name="userPermissionDao">
+ 		<ref bean="userPermissionDao"/>
+ 	</property>
+ 	<property name="dataUrlDao">
+ 		<ref bean="dataUrlDao"/>
+ 	</property>
+ 	<property name="qpsPeriodDao">
+ 		<ref bean="qpsPeriodDao"/>
+ 	</property>
+ 	<property name="refIpDao">
+ 		<ref bean="refIpDao"/>
+ 	</property>
+  </bean> 
+  
+  <bean id="clientInteractiveBo" class="com.taobao.sentinel.bo.ClientInteractiveBo" >
+  
+  </bean> 
+  
+  <bean id="interfaceInvokeBo" class="com.taobao.sentinel.bo.InterfaceInvokeBo" >
+  	<property name="interfaceInvokeDao">
+ 		<ref bean="interfaceInvokeDao"/>
+ 	</property>
+  </bean> 
+  
+  <bean id="syncBo" class="com.taobao.sentinel.bo.SyncBo" >
+  	<property name="whiteListInterfaceBo">
+ 		<ref bean="whiteListInterfaceBo"/>
+ 	</property>
+ 	<property name="blackListInterfaceBo">
+ 		<ref bean="blackListInterfaceBo"/>
+ 	</property>
+ 	<property name="blackListAppBo">
+ 		<ref bean="blackListAppBo"/>
+ 	</property>
+ 	<property name="whiteListCustomerBo">
+		<ref bean="whiteListCustomerBo"/>
+	</property>
+	<property name="blackListCustomerBo">
+		<ref bean="blackListCustomerBo"/>
+	</property>
+	<property name="flowControlInterfaceBo">
+ 		<ref bean="flowControlInterfaceBo"/>
+ 	</property>
+ 	<property name="flowControlAppBo">
+ 		<ref bean="flowControlAppBo"/>
+ 	</property>
+  	<property name="refIpDao">
+ 		<ref bean="refIpDao"/>
+ 	</property>
+  </bean>
+
+</beans>

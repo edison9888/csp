@@ -1,0 +1,132 @@
+*{
+	font-size:13px;
+}
+html,body{
+	margin:0;
+	padding:0;
+}
+body{
+    font-family:Arial,Helvetica,"Nimbus Sans L",sans-serif;
+	background:#fafafa;
+	text-align:center;
+}
+h3{
+	font-size:20px;
+	font-weight:bold;
+	margin:12px 0;
+}
+h4{
+	font-size:16px;
+	font-weight:bold;
+	color:#CC0000;
+	margin:10px 0;
+}
+h5{
+	font-size:14px;
+	font-weight:bold;
+	color:#990000;
+	margin:5px 0;
+}
+#header{
+	text-align:center;
+	background:#666;
+}
+#header-inner{
+	text-align:left;
+	margin:0 auto;
+	width:1120px;
+	padding:10px 0;
+}
+.mainwrap{
+	text-align:center;
+	margin:5px 5px 5px;
+	float: left;
+}
+.mian_content{
+	width:100%;
+	text-align:left;
+	margin:1px 1px 1px;
+	padding:10px;
+	border-radius:5px;
+	border:1px solid #ddd;
+	background:#fff;
+	float: left;
+}
+
+.mian_body {
+		width:100%;
+		float: left;
+		background-color: #E7EEFE;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+	}
+	
+	.table_comm {
+		width:100%;
+		float: left;
+		background-color: #E7EEFE;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+	}
+	
+	.table_comm  td {
+	border:1px solid #99BBE8;
+	background: #fff;
+	color: #4f6b72;
+}
+
+.list_table {
+ 	border: 0;
+ 	cellspacing :1;
+ 	cellpadding :1;
+	border-left:#C8B9AE solid 0px;
+	border-top:#C8B9AE solid 0px;
+	border-collapse:collapse; 	
+}
+
+.list_table td {
+	border:0px solid #99BBE8;
+	background: #fff;
+	color: #4f6b72;
+}
+
+.list_table thead tr td {
+	text-align: center;
+	background-color: #A8E0ED;
+}
+.accordion .accordion-header {
+	background: #fafafa;
+}
+.accordion .accordion-header-selected {
+	background: url('images/nav.png') center bottom no-repeat;
+	height: 35px;
+	border: 0;
+}
+.pitem {
+	list-style-type: none;
+	margin: 0;
+	padding: 2px 0 10px 20px;
+}
+.pitem li {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+
+.firstTitleTd {
+	font-weight: bold;	
+	background: #1FB5D0;
+	font-size: 100%;
+}
+
+.secondTitleTd {
+	background: #1FB5D0;
+}
+
+.selectLeftMenu {
+	background-color: #18ADCD
+}
